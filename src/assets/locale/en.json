@@ -1,0 +1,107 @@
+{
+  "textPP": "Privacy policy",
+  "textTC": "Terms and conditions",
+  "close": "Close",
+  "textLogin": "Log in",
+  "textSignUp": "Sign up",
+  "sourceSelect": {
+    "placeholder": "Select a source",
+    "referral": "Referral",
+    "flyer": "Flyer",
+    "university": "University",
+    "onlineSearch": "Online Search (e.g. Google)",
+    "whatsappGroup": "WhatsApp Group",
+    "instagram": "Instagram",
+    "youtube": "YouTube",
+    "linkedin": "LinkedIn",
+    "tiktok": "TikTok",
+    "event": "Event",
+    "digitalDisplay": "Digital Display",
+    "printAd": "Print Ad",
+    "onlineAd": "Online Ad",
+    "websiteBlog": "Website / Blog",
+    "other": "Other Source"
+  },
+  "login": {
+    "title": "Welcome back",
+    "emailPH": "E-Mail",
+    "pwdPH": "Password",
+    "buttonText": "Log in",
+    "redirectText": "Don't have an account? ",
+    "textSignUp": "Sign up"
+  },
+  "signup": {
+    "title": "Create an account",
+    "emailPH": "E-Mail",
+    "namePH": "Name",
+    "surnamePH": "Surname",
+    "pwdPH": "Password",
+    "pwdLengthReq": "At least 8 characters",
+    "pwdSpecialCharacterMsg": "At least one special character",
+    "pwdDigitMsg": "At least one digit",
+    "pwdCaseReq": "At least one upper case letter",
+    "pwdMismatch": "Passwords don't match",
+    "confirmPwdPH": "Confirm password",
+    "checkboxLegal": "I have read the privacy policy and agree to the terms and conditions.",
+    "checkboxNewsletter": "I would like to receive newsletters and updates.",
+    "buttonText": "Sign up",
+    "continueButtonText": "Continue",
+    "redirectText": "Already have an account? ",
+    "textLogin": "Log in"
+  },
+  "cookieBanner": {
+    "heading": "Cookies from grandma? \uD83C\uDF6A",
+    "textPart1": "We use cookies to improve your experience on our website and to analyze the use of the website. Some cookies are essential to ensure basic functions, while others help us analyze and optimize the website and your user experience. By clicking",
+    "textPart2": "you agree to the use of all cookies, including tracking cookies such as Google Analytics. If you click",
+    "textPart3": "we will only use essential cookies.",
+    "acceptAll": "Accept All",
+    "declineAll": "Decline All"
+  },
+  "popup": {
+    "heading": "Important Update Available",
+    "text": "We have an important update regarding our privacy policy. Please take a moment to review the new changes and how they may affect your use of our services. The updated policy will take effect on July 1, 2024. If you have any questions, feel free to contact our support team.",
+    "cta": "Read More"
+  },
+  "welcomeHint": {
+    "text": "Hi, I'm JobBot, your personal assistant for job applications. My goal is to assist you at every step of your application journey. Whether you're searching for job openings, looking to optimize your resume, or need help creating a cover letter – I'm here to help you. Let's work together to achieve your career goals!"
+  },
+  "video": {
+    "cookies": "To view this video, all cookies must be accepted. Please refresh the page after accepting them."
+  },
+  "chat": {
+    "welcomeMsg": "How can I assist you today?",
+    "createNewResumeMsg": "Let's create a new resume! Choose what you want to add:",
+    "workExperienceMsg": "Please provide your work experience details.",
+    "enterDescription": "Please describe your tasks and responsibilities"
+  },
+  "chatButton": {
+    "createNewResume": "Create New Resume",
+    "createNewCoverLetter": "Create New Cover Letter",
+    "uploadResume": "Upload Resume",
+    "improveResume": "Improve Resume",
+    "workExperience": "Work Experience",
+    "education": "Education",
+    "skills": "Skills"
+  },
+  "workExperienceForm": {
+    "jobTitle": "Job Title",
+    "employer": "Employer",
+    "city": "City",
+    "startDate": "Start Date",
+    "endDate": "End Date"
+  },
+  "educationForm": {
+    "schoolName": "School Name",
+    "degree": "Degree",
+    "fieldOfStudy": "Field of Study",
+    "startDate": "Start Date",
+    "endDate": "End Date"
+  },
+  "skillsForm": {
+    "skillName": "Skill Name",
+    "proficiency": "Proficiency"
+  },
+  "chatForm": {
+    "submit": "Submit"
+  }
+}

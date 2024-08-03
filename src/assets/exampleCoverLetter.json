@@ -1,0 +1,15 @@
+{
+  "coverLetterLangauge": "English",
+  "letterSubject": "Application for the Software Engineer Position",
+  "letterBody": "I am writing to express my interest in the Software Engineer position at Tech Innovations, as advertised on your website. With a strong background in software development and a passion for innovative technology, I am excited about the opportunity to contribute to your team.\n\nIn my previous role at XYZ Corp, I led a team of developers in creating a highly scalable application using Java and Spring Boot. This experience has honed my skills in coding, problem-solving, and project management. I am particularly drawn to Tech Innovations' commitment to cutting-edge technology and would be thrilled to bring my expertise to your organization.\n\nThank you for considering my application. I look forward to the possibility of discussing this exciting opportunity with you.",
+  "date": "2024-07-30",
+  "receiverContact": {
+    "company": "Tech Innovations",
+    "street": "Innovation Street",
+    "houseNumber": "42",
+    "postalCode": "12345",
+    "city": "Tech City",
+    "formOfAddress": "Mr.",
+    "receiverSurname": "Smith"
+  }
+}

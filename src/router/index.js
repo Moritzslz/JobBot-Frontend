@@ -1,0 +1,33 @@
+import { createRouter, createWebHistory } from 'vue-router';
+import Login from "@/components/Login.vue";
+import Signup from '@/components/SignUp.vue';
+import Chat from '@/components/chat/Chat.vue';
+
+const routes = [
+    {
+        path: '/',
+        redirect: '/login'
+    },
+    {
+        path: '/login',
+        name: 'Login',
+        component: Login
+    },
+    {
+        path: '/signup',
+        name: 'Signup',
+        component: Signup
+    },
+    {
+        path: '/chat',
+        name: 'Chat',
+        component: Chat
+    }
+];
+
+const router = createRouter({
+    history: createWebHistory(),
+    routes
+});
+
+export default router;

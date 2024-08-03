@@ -1,0 +1,107 @@
+{
+  "config": {
+    "resumeLanguage": "German",
+    "jobTitle": null,
+    "companyName": null
+  },
+  "workExperience": [
+    {
+      "jobTitle": "Senior Software Engineer",
+      "employer": "Tech Solutions GmbH",
+      "city": "München",
+      "country": "Deutschland",
+      "presentlyEmployed": true,
+      "startDate": "2020-01",
+      "endDate": null,
+      "bulletList": [
+        "Entwickelte und implementierte Softwarelösungen für Kunden aus der Automobilindustrie, wodurch die Effizienz um 15% gesteigert wurde.",
+        "Führe ein Team von 3 Entwicklern bei der Implementierung eines neuen Online-Shops, der zu einem Umsatzwachstum von 20% führte.",
+        "Optimierte den Code einer bestehenden Anwendung, wodurch die Ladezeiten um 30% reduziert wurden."
+      ]
+    },
+    {
+      "jobTitle": "Junior Backend Developer",
+      "employer": "Innovative Solutions AG",
+      "city": "Berlin",
+      "country": "Deutschland",
+      "presentlyEmployed": false,
+      "startDate": "2018-05",
+      "endDate": "2019-10",
+      "bulletList": [
+        "Entwickelte und implementierte Backend-Komponenten für eine E-Commerce-Plattform, die Millionen von Nutzern bedient.",
+        "Verwendete moderne Programmiersprachen und Technologien wie Java, Spring Boot und MySQL.",
+        "Schrieb sauberen, effizienten und wartbaren Code und führte Unit-Tests durch, um hohe Qualität sicherzustellen.",
+        "Dokumentierte Code und erstellte technische Dokumentationen für zukünftige Referenz."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "Technische Universität München",
+      "degree": "Bachelor of Science",
+      "fieldOfStudy": "Informatik",
+      "city": "München",
+      "country": "Deutschland",
+      "expectedGraduation": true,
+      "startDate": "2020-10",
+      "endDate": "2024-09",
+      "gpa": "1.5",
+      "bulletList": [
+        "Absolvierte das Studium mit einem Notendurchschnitt von 1.5, was zu den Top 10% der Absolventen gehört.",
+        "Vertiefte Kenntnisse in den Bereichen Softwareentwicklung, Algorithmen und Datenstrukturen, Datenbanken und künstliche Intelligenz.",
+        "Erfolgreiche Teilnahme an verschiedenen Projekten und Praktika im Bereich der Softwareentwicklung."
+      ]
+    }
+  ],
+  "skills": [],
+  "personalProjects": [],
+  "additionalExperience": [
+    {
+      "experienceTitle": "Hackathon Participant",
+      "organization": "Tech Innovators Hackathon",
+      "city": "Berlin",
+      "country": "Deutschland",
+      "startDate": "2023-03",
+      "endDate": "2023-03",
+      "bulletList": [
+        "Entwickelte innovative Lösung in einem 48-Stunden-Hackathon, das mit dem Preis für Innovation und Kreativität ausgezeichnet wurde.",
+        "Arbete in einem Team von 4 Personen, um innerhalb der vorgegebenen Zeit ein voll funktionsfähiges Produkt zu entwickeln.",
+        "Präsentierte das Projekt vor einer Jury aus Fachleuten und erhielt wertvolles Feedback.",
+        "Erweiterte die technischen Fähigkeiten und vertiefte das Wissen über agile Softwareentwicklung und Teamwork.",
+        "Netzwerk mit anderen Entwicklern und Innovatoren aus der Tech-Branche."
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "awardName": "Best Developer of the Year",
+      "issuer": "Tech Industry Awards",
+      "issueDate": "2022-11",
+      "url": "http://techindustryawards.com/best-developer-2022",
+      "bulletList": [
+        "Würdigung der technischen Expertise, des innovativen Denkens und der Fähigkeit, komplexe Probleme zu lösen.",
+        "Hervorhebung der Leidenschaft für Softwareentwicklung und dem Bestreben, die eigenen Fähigkeiten kontinuierlich zu verbessern."
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "certificateName": "Google Cloud Professional Cloud Architect",
+      "issuer": "Google Cloud",
+      "issueDate": "2023-05",
+      "url": "https://cloud.google.com/certification/cloud-architect",
+      "bulletList": [
+        "Zertifizierter Google Cloud Professional Cloud Architect mit umfassenden Kenntnissen und Fähigkeiten im Bereich Cloud Computing und Cloud-Architektur.",
+        "Fähigkeit, Cloud-basierte Anwendungen zu skalieren und zu optimieren und die Kosten für Cloud-Ressourcen zu steuern.",
+        "Verständnis von Best Practices für Cloud-Sicherheit und Compliance."
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Deutsch",
+      "proficiencyCEFR": "C2"
+    }
+  ],
+  "hobbies": []
+}

@@ -1,0 +1,107 @@
+{
+  "textPP": "Datenschutzerklärung",
+  "textTC": "ABG",
+  "close": "Schließen",
+  "textLogin": "Anmelden",
+  "textSignUp": "Registrieren",
+  "sourceSelect": {
+    "placeholder": "Quelle auswählen",
+    "referral": "Empfehlung",
+    "flyer": "Flyer",
+    "university": "Universität",
+    "onlineSearch": "Online Suche (z.B. Google)",
+    "whatsappGroup": "WhatsApp Gruppe",
+    "instagram": "Instagram",
+    "youtube": "YouTube",
+    "linkedin": "LinkedIn",
+    "tiktok": "TikTok",
+    "event": "Veranstaltung",
+    "digitalDisplay": "Digitalanzeige",
+    "printAd": "Print Werbung",
+    "onlineAd": "Online Werbung",
+    "websiteBlog": "Webseite / Blog",
+    "other": "Andere Quelle"
+  },
+  "login": {
+    "title": "Willkommen zurück",
+    "emailPH": "E-Mail",
+    "pwdPH": "Passwort",
+    "buttonText": "Anmelden",
+    "redirectText": "Noch keinen Account? ",
+    "textSignUp": "Registrieren"
+  },
+  "signup": {
+    "title": "Account erstellen",
+    "emailPH": "E-Mail",
+    "namePH": "Vorname",
+    "surnamePH": "Nachname",
+    "pwdPH": "Passwort",
+    "pwdLengthReq": "Mindestens 8 Zeichen",
+    "pwdSpecialCharacterMsg": "Mindestens ein Sonderzeichen",
+    "pwdDigitMsg": "Mindestens eine Zahl",
+    "pwdCaseReq": "Mindestens ein Großbuchstabe",
+    "pwdMismatch": "Passwörter stimmen nicht überein",
+    "confirmPwdPH": "Passwort bestätigen",
+    "checkboxLegal": "Ich habe die Datenschutzerklärung gelesen und erkläre mich mit den AGB einverstanden.",
+    "checkboxNewsletter": "Ich möchte Newsletter und Updates erhalten.",
+    "buttonText": "Registrieren",
+    "continueButtonText": "Weiter",
+    "redirectText": "Bereits einen Account? ",
+    "textLogin": "Anmelden"
+  },
+  "cookieBanner": {
+    "heading": "Cookies von Oma? \uD83C\uDF6A",
+    "textPart1": "Wir verwenden Cookies, um deine Erfahrung auf unserer Website zu verbessern und die Nutzung der Website zu analysieren. Einige Cookies sind essenziell, um grundlegende Funktionen zu gewährleisten, während andere uns helfen, die Website und deine Benutzererfahrung zu analysieren und optimieren. Durch Klicken auf",
+    "textPart2": "stimmst du der Verwendung aller Cookies, einschließlich Tracking-Cookies wie Google Analytics, zu. Wenn du auf",
+    "textPart3": "klickst, verwenden wir nur essenzielle Cookies.",
+    "acceptAll": "Alle akzeptieren",
+    "declineAll": "Alle ablehnen"
+  },
+  "popup": {
+    "heading": "Wichtige Aktualisierung Verfügbar",
+    "text": "Wir haben eine wichtige Aktualisierung bezüglich unserer Datenschutzrichtlinie. Bitte nehmen Sie sich einen Moment Zeit, um die neuen Änderungen zu überprüfen und wie sie Ihre Nutzung unserer Dienste beeinflussen können. Die aktualisierte Richtlinie tritt am 1. Juli 2024 in Kraft. Wenn Sie Fragen haben, wenden Sie sich bitte an unser Support-Team.",
+    "cta": "Mehr dazu"
+  },
+  "welcomeHint": {
+    "text": "Hi, ich bin JobBot, dein persönlicher Assistent für Bewerbungen. Mein Ziel ist es, dir bei jedem Schritt deiner Bewerbungsreise zur Seite zu stehen. Ob du nach Stellenangeboten suchst, deinen Lebenslauf optimieren möchtest oder ein Anschreiben erstellen willst – ich bin hier, um dir zu helfen. Lass uns gemeinsam deine beruflichen Ziele erreichen!"
+  },
+  "video": {
+    "cookies": "Um dieses Video anzusehen, müssen alle Cookies akzeptiert werden. Bitte aktualisiere die Seite danach."
+  },
+  "chat": {
+    "welcomeMsg": "Wie kann ich dir heute behilflich sein?",
+    "createNewResumeMsg": "Lass uns einen neuen Lebenslauf erstellen! Wähle, was du hinzufügen möchtest:",
+    "workExperienceMsg": "Bitte geben deine Berufserfahrung an.",
+    "enterDescription": "Bitte beschreibe deine Aufgaben und Verantwortlichkeiten"
+  },
+  "chatButton": {
+    "createNewResume": "Neuen Lebenslauf erstellen",
+    "createNewCoverLetter": "Neues Anschreiben erstellen",
+    "uploadResume": "Lebenslauf hochladen",
+    "improveResume": "Lebenslauf verbessern",
+    "workExperience": "Berufserfahrung",
+    "education": "Ausbildung",
+    "skills": "Fähigkeiten"
+  },
+  "workExperienceForm": {
+    "jobTitle": "Berufsbezeichnung",
+    "employer": "Arbeitgeber",
+    "city": "Stadt",
+    "startDate": "Anfangsdatum",
+    "endDate": "Enddatum"
+  },
+  "educationForm": {
+    "schoolName": "Schulname",
+    "degree": "Abschluss",
+    "fieldOfStudy": "Studienfeld",
+    "startDate": "Anfangsdatum",
+    "endDate": "Enddatum"
+  },
+  "skillsForm": {
+    "skillName": "Fähigkeit",
+    "proficiency": "Kompetenz"
+  },
+  "chatForm": {
+    "submit": "Einreichen"
+  }
+}
