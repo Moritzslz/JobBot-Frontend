@@ -4,6 +4,18 @@
   "close": "Schließen",
   "textLogin": "Anmelden",
   "textSignUp": "Registrieren",
+  "errors": {
+    "webSocketConnectionError": "Verbindung zum WebSocket konnte nicht hergestellt werden. Bitte überprüfen Sie Ihre Netzwerkverbindung und versuchen Sie es erneut.",
+    "networkError": "Netzwerkfehler. Bitte überprüfen Sie Ihre Internetverbindung.",
+    "serverError": "Serverfehler. Bitte versuchen Sie es später erneut.",
+    "notFound": "Die angeforderte Ressource wurde nicht gefunden.",
+    "unauthorized": "Sie sind nicht berechtigt, auf diese Ressource zuzugreifen.",
+    "forbidden": "Zugriff auf diese Ressource ist verboten.",
+    "validationError": "Es gab einen Fehler bei der Datenvalidierung. Bitte überprüfen Sie Ihre Eingaben und versuchen Sie es erneut.",
+    "timeoutError": "Die Anfrage ist abgelaufen. Bitte versuchen Sie es später erneut.",
+    "internalServerError": "Ein interner Serverfehler ist aufgetreten. Bitte versuchen Sie es später erneut.",
+    "formSubmissionError": "Es gab einen Fehler beim Absenden des Formulars. Bitte versuchen Sie es erneut."
+  },
   "sourceSelect": {
     "placeholder": "Quelle auswählen",
     "referral": "Empfehlung",

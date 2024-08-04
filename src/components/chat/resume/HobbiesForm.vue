@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+import Send from "@/components/icons/Send.vue";
 
 // Emit function to communicate with the parent component
 const emit = defineEmits(["formSubmitted", "formClosed"]);
@@ -40,7 +41,9 @@ const closeForm = () => {
         <label for="name">Hobby Name</label>
         <input type="text" id="name" v-model="hobby.name" required />
       </div>
-      <button type="submit">Submit</button>
+      <button type="submit" class="submit-icon-btn">
+        <Send></Send>
+      </button>
     </form>
   </div>
 </template>

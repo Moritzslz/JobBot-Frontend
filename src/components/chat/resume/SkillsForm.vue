@@ -56,7 +56,7 @@ const closeForm = () => {
       <input type="text" v-model="skills[index]" placeholder="Enter a skill" />
     </div>
     <button type="button" @click="addSkill">Add Skill</button>
-    <button type="button" class="icon-btn submit-btn" @click="emitSkills">
+    <button type="button" class="submit-icon-btn" @click="emitSkills">
       <Send></Send>
     </button>
   </div>

@@ -1,5 +1,6 @@
 <script setup>
 import {computed, ref} from 'vue';
+import Send from "@/components/icons/Send.vue";
 
 // Emit function to communicate with the parent component
 const emit = defineEmits(["formSubmitted", "formClosed"]);
@@ -113,7 +114,9 @@ const closeForm = () => {
       <div class="char-counter">
         {{ remainingChars }} characters left
       </div>
-      <button type="submit">Submit</button>
+      <button type="submit" class="submit-icon-btn">
+        <Send></Send>
+      </button>
     </form>
   </div>
 </template>

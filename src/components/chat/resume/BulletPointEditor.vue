@@ -1,5 +1,6 @@
 <script setup>
 import { ref, watch } from 'vue';
+import Send from "@/components/icons/Send.vue";
 
 // Emit function to communicate with the parent component
 const emit = defineEmits(["formSubmitted", "formClosed"]);
@@ -52,7 +53,9 @@ const closeForm = () => {
       <button type="button" @click="removeBulletPoint(index)">Remove</button>
     </div>
     <button type="button" @click="addBulletPoint">Add Bullet Point</button>
-    <button type="button" @click="emitBulletPoints">Save Bullet Points</button>
+    <button type="button" @click="emitBulletPoints" class="submit-icon-btn">
+      <Send></Send>
+    </button>
   </div>
 </template>
 

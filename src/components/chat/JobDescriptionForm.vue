@@ -1,5 +1,6 @@
 <script setup>
 import {computed, ref} from "vue";
+import Send from "@/components/icons/Send.vue";
 
 const emit = defineEmits(["formSubmitted", "formClosed"]);
 
@@ -71,7 +72,9 @@ const closeForm = () => {
           {{ remainingChars }} characters left
         </div>
       </div>
-      <button type="submit">Submit</button>
+      <button type="submit" class="submit-icon-btn">
+        <Send></Send>
+      </button>
     </form>
   </div>
 </template>

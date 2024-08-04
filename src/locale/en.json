@@ -4,6 +4,18 @@
   "close": "Close",
   "textLogin": "Log in",
   "textSignUp": "Sign up",
+  "errors": {
+    "webSocketConnectionError": "Unable to connect to the WebSocket. Please check your network connection and try again.",
+    "networkError": "Network error. Please check your internet connection.",
+    "serverError": "Server error. Please try again later.",
+    "notFound": "The requested resource was not found.",
+    "unauthorized": "You are not authorized to access this resource.",
+    "forbidden": "Access to this resource is forbidden.",
+    "validationError": "There was an error with the data validation. Please check your input and try again.",
+    "timeoutError": "The request timed out. Please try again later.",
+    "internalServerError": "An internal server error occurred. Please try again later.",
+    "formSubmissionError": "There was an error submitting the form. Please try again."
+  },
   "sourceSelect": {
     "placeholder": "Select a source",
     "referral": "Referral",
