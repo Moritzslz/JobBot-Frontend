@@ -1,27 +1,44 @@
 <script setup>
 import {onMounted, onUnmounted, ref} from 'vue';
-import SkillsForm from "@/components/chat/resume/SkillsForm.vue";
+import { useRouter } from 'vue-router';
+import HorizontalScrollMenu from "@/components/HorizontalScrollMenu.vue";
+import Navbar from "@/components/Navbar.vue";
 import WorkExperienceForm from "@/components/chat/resume/WorkExperienceForm.vue";
 import EducationForm from "@/components/chat/resume/EducationForm.vue";
-import BulletPointEditor from "@/components/chat/resume/BulletPointEditor.vue";
-import AdditionalExperienceForm from "@/components/chat/resume/AdditionalExperienceForm.vue";
 import PersonalProjectsForm from "@/components/chat/resume/PersonalProjectsForm.vue";
 import CertificationsForm from "@/components/chat/resume/CertificationsForm.vue";
 import LanguagesForm from "@/components/chat/resume/LanguagesForm.vue";
 import HobbiesForm from "@/components/chat/resume/HobbiesForm.vue";
+import AdditionalExperienceForm from "@/components/chat/resume/AdditionalExperienceForm.vue";
 import AwardsForm from "@/components/chat/resume/AwardsForm.vue";
-import LanguageSelector from "@/components/chat/LanguageSelector.vue";
+import BulletPointEditor from "@/components/chat/resume/BulletPointEditor.vue";
+import SkillsForm from "@/components/chat/resume/SkillsForm.vue";
 import JobDescriptionForm from "@/components/chat/JobDescriptionForm.vue";
-import ReceiverContact from "@/components/chat/coverletter/ReceiverContact.vue";
-import { useRouter } from 'vue-router';
+import JobBotLogo from "@/components/icons/JobBotLogo.vue";
 
 const router = useRouter();
 const serverMessage = ref('');
 
 // Define a reactive property to track the active form
 const activeForm = ref(null);
-const messages = ref([]);
+const messages = ref([
+  { text: 'This is a very long example message for testing. This is a very long example message for testing. This is a very long example message for testing. This is a very long example message for testing. This is a very long example message for testing', isUser: false, isError: true }
+]);
 let websocket;
+
+const forms = {
+  "jobDescriptionForm": JobDescriptionForm,
+  "workExperienceForm": WorkExperienceForm,
+  "educationForm": EducationForm,
+  "skillsForm": SkillsForm,
+  "personalProjectsForm": PersonalProjectsForm,
+  "additionalExperienceForm": AdditionalExperienceForm,
+  "awardsForm": AwardsForm,
+  "certificationsForm": CertificationsForm,
+  "languagesForm": LanguagesForm,
+  "hobbiesForm": HobbiesForm,
+  "bulletPointEditor": BulletPointEditor
+}
 
 // Define a function to set the active form
 const setActiveForm = (form) => {
@@ -37,6 +54,7 @@ const handleFormSubmitted = (data) => {
     websocket.send(JSON.stringify(data));
   } else {
     messages.value.push({ text: 'Failed to send message: WebSocket connection is not open.', isUser: false, isError: true });
+    addServerMessage('Test with some bullet points: ["Some bullet point", "Another bullet point"]')
   }
 
   // Simulate server response
@@ -45,29 +63,29 @@ const handleFormSubmitted = (data) => {
   //}, 1000);
 };
 
+const extractBulletPoints = (message) => {
+  const match = message.match(/\[.*\]/);
+  if (match) {
+    try {
+      console.log(JSON.parse(match[0]));
+      return JSON.parse(match[0]);
+    } catch (error) {
+      console.error('Failed to parse bullet points:', error);
+      return [];
+    }
+  }
+  return [];
+};
+
 const handleFormClosed = () => {
   activeForm.value = null; // Close the currently active form
 };
 
-// Define the forms available
-const forms = {
-  workExperience: WorkExperienceForm,
-  education: EducationForm,
-  personalProjects: PersonalProjectsForm,
-  certifications: CertificationsForm,
-  languages: LanguagesForm,
-  hobbies: HobbiesForm,
-  additionalExperience: AdditionalExperienceForm,
-  awards: AwardsForm,
-  documentLanguage: LanguageSelector,
-  bulletPointEditor: BulletPointEditor,
-  skillsForm: SkillsForm,
-  receiverContact: ReceiverContact,
-  jobDescription: JobDescriptionForm,
-};
-
 const addServerMessage = (text, isError = false) => {
   messages.value.push({ text, isUser: false, isError });
+  if(extractBulletPoints(text).length > 0) {
+    setActiveForm("bulletPointEditor") // TODO
+  }
 };
 
 const initializeWebSocket = () => {
@@ -102,89 +120,32 @@ onUnmounted(() => {
 </script>
 
 <template>
+  <Navbar :svg=JobBotLogo nav-item1="Link" nav-item2="Link" nav-item3="Link" nav-item4="Link" nav-item5="Link" nav-item6="Link"></Navbar>
   <div class="chat-ui">
-    <div class="chat-messages">
+    <div class="chat-message-wrapper">
       <div
           v-for="(message, index) in messages"
           :key="index"
           :class="['chat-message', message.isUser ? 'user-message' : 'server-message']"
       >
-        <pre>{{ message.text }}</pre>
+        <div v-if=!message.isUser class="chat-message-icon" :class="[message.isError ? 'error-message' : '']">
+          <JobBotLogo></JobBotLogo>
+        </div>
+        <div class="message-body" :class="[message.isError ? 'error-message' : '']">
+          {{ message.text }}
+        </div>
       </div>
       <!-- Display the active form as a message -->
       <component :is="forms[activeForm]"
                  v-if="activeForm"
-                 class="chat-message user-message"
+                 class="message-body user-message"
                  @formSubmitted="handleFormSubmitted"
                  @formClosed="handleFormClosed" />
     </div>
-    <div class="chat-slider">
-      <button v-for="(form, key) in forms" :key="key" @click="setActiveForm(key)">
-        {{ key.replace(/([A-Z])/g, ' $1').toUpperCase() }}
-      </button>
-    </div>
   </div>
+  <HorizontalScrollMenu @formSelected="setActiveForm" :forms=forms></HorizontalScrollMenu>
 </template>
 
 <style scoped>
-.chat-ui {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  max-width: 50vw;
-}
 
-.chat-messages {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  overflow-y: auto;
-  padding: 10px;
-}
-
-.chat-message {
-  background: #f1f1f1;
-  border-radius: 10px;
-  padding: 10px;
-  margin-bottom: 10px;
-  width: 80%;
-}
-
-.user-message {
-  align-self: flex-end;
-  background: #007bff;
-  color: white;
-}
-
-.server-message {
-  align-self: flex-start;
-  color: black;
-  background: #e0e0e0;
-}
-
-.chat-message pre {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-.chat-slider {
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  background: #eee;
-}
-
-.chat-slider button {
-  margin: 0 5px;
-  padding: 10px 15px;
-  cursor: pointer;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-}
-
-.chat-slider button:hover {
-  background: #0056b3;
-}
 </style>

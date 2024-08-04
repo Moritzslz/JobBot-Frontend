@@ -107,26 +107,5 @@ const closeForm = () => {
 </template>
 
 <style scoped>
-.chat-form {
-  max-width: 600px;
-  background-color: gray;
-}
-.form-group {
-  margin-bottom: 15px;
-}
-label {
-  display: block;
-  margin-bottom: 5px;
-}
-input, textarea, button {
-  width: 100%;
-  padding: 8px;
-  box-sizing: border-box;
-}
-textarea {
-  height: 100px;
-}
-button {
-  margin-top: 10px;
-}
+
 </style>

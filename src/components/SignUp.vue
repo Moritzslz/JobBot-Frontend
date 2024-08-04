@@ -5,6 +5,8 @@ import '@/assets/css/main.css';
 import '@/assets/css/variables.css';
 import {ref, watch} from "vue";
 import {useRouter} from "vue-router";
+import Navbar from "@/components/Navbar.vue";
+import JobBotLogo from "@/components/icons/JobBotLogo.vue";
 
 const props = defineProps({
   hrefHome: String,
@@ -13,7 +15,7 @@ const props = defineProps({
   hrefTC: String,
   minPwdLength: Number,
   svgColor: String,
-  svg: String
+  svg: JobBotLogo
 });
 
 const router = useRouter();
@@ -195,6 +197,7 @@ async function handleSubmit() {
 </script>
 
 <template>
+  <Navbar :svg=JobBotLogo nav-item1="Link" nav-item2="Link" nav-item3="Link" nav-item4="Link" nav-item5="Link" nav-item6="Link"></Navbar>
   <form class="auth-from" @submit.prevent="handleSubmit">
     <a :href="hrefHome">
       <component class="logo-mark" :class="svgColor" :is="svg"></component>

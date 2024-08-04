@@ -1,8 +1,9 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import Chat from "@/components/chat/Chat.vue";
+import Chat from "@/components/chat/CreateResumeChat.vue";
 import '@/assets/css/main.css';
 import '@/assets/css/variables.css';
+import '@/assets/css/new-main.css'
 
 // The message received from the server
 const serverMessage = `Hi thanks for sending me your work experience. Here are some suggested bullet points: ["Some bullet point", "Another bullet point"]. Feel free to alter and select the ones you like. How else might I assist you?`;

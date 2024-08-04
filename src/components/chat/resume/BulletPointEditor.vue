@@ -57,23 +57,5 @@ const closeForm = () => {
 </template>
 
 <style scoped>
-.chat-form {
-  max-width: 600px;
-  background-color: gray;
-}
-.bullet-point {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-.bullet-point input {
-  flex: 1;
-}
-.bullet-point button {
-  margin-left: 10px;
-}
-button {
-  display: block;
-  margin-top: 10px;
-}
+
 </style>

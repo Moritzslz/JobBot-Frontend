@@ -4,6 +4,8 @@ import '@/assets/css/main.css';
 import '@/assets/css/variables.css';
 import {ref} from "vue";
 import {useRouter} from "vue-router";
+import Navbar from "@/components/Navbar.vue";
+import JobBotLogo from "@/components/icons/JobBotLogo.vue";
 
 defineProps({
   hrefHome: String,
@@ -11,7 +13,7 @@ defineProps({
   hrefPP: String,
   hrefTC: String,
   svgColor: String,
-  svg: String
+  svg: JobBotLogo
 });
 
 const router = useRouter();
@@ -72,6 +74,7 @@ async function handleSubmit() {
 </script>
 
 <template>
+  <Navbar :svg=JobBotLogo nav-item1="Link" nav-item2="Link" nav-item3="Link" nav-item4="Link" nav-item5="Link" nav-item6="Link"></Navbar>
   <form class="auth-from" @submit.prevent="handleSubmit">
     <a :href="hrefHome">
       <component class="logo-mark" :class="svgColor" :is="svg"></component>
@@ -84,7 +87,7 @@ async function handleSubmit() {
     <button type="submit" @click="validateFields">{{ $t("login.buttonText") }}</button>
     <p>{{ $t("login.redirectText")  }}<a class="link" :href="hrefSignUp">{{ $t("login.textSignUp") }}</a></p>
     <div class="divider"></div>
-    <p><a :href="hrefPP">{{ $t("textPP") }}</a> | <a :href="hrefTC ">{{ $t("textTC") }}</a></p>
+    <p><a :href="hrefPP">{{ $t("textPP") }}</a> | <a :href="hrefTC">{{ $t("textTC") }}</a></p>
   </form>
 </template>
 

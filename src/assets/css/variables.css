@@ -7,6 +7,8 @@
     /* Widths and heights */
     --content-max-width: 1200px;
     --navbar-min-height: 4rem;
+    --chat-icon-size: 2.5rem;
+    --chat-width: 70vw;
 
     /* Paddings and margins */
     --card-padding: 24px 20px 24px 20px;
@@ -21,19 +23,24 @@
     --popup-padding: 2rem 2rem 1rem 2rem;
     --popup-gap: 1rem;
     --navbar-padding: 8px;
+    --chat-icon-padding: 4px;
+    --message-body-padding: 1rem;
+
 
     /* Borders and shadows */
     --border-radius: 8px;
     --border-radius-sm: 4px;
+    --border-error: var(--red-400);
     --shadow-dark: 0 0 1rem rgba(0, 0, 0, 0.1);
     --shadow-light: 0 0 1rem rgba(255, 255, 255, 0.1);
     --shadow-inset: 0 0 3rem rgba(255, 255, 255, 0.25);
     --button-border: 2px solid var(--primary-700);
     --input-border: 2px solid var(--gray-200);
     --input-border-color: var(--gray-200);
-    --input-border-error: var(--red-400);
     --input-border-focus-color: var(--primary);
     --accordion-border: 1px solid var(--gray-200);
+    --chat-icon-border-radius: var(--chat-icon-size);
+    --chat-message-border: 1px solid var(--secondary-bg-color);
 
     /* Buttons and inputs */
     --button-primary: var(--primary-700);
@@ -41,7 +48,7 @@
     --button-text: var(--gray-900);
     --input-disabled: var(--gray-100);
     --toggle-btn-height: 1.25rem;
-    --toggle-btn-width: 3rem;
+    --toggle-btn-width: 2.5rem;
     --toggle-btn-border-radius: 1.25rem;
     --toggle-btn-margin: 0.5rem;
     --toggle-btn-circle-size: 1.25rem;

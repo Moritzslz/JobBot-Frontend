@@ -1,0 +1,127 @@
+.svg-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.chat-ui {
+    max-width: var(--chat-width);
+    padding-bottom: 10vh;
+}
+
+.chat-message-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.chat-message {
+    display: flex;
+    flex-direction: row;
+    max-width: 66%;
+    gap: var(--gap-small);
+}
+
+.chat-message-icon {
+    width: var(--chat-icon-size);
+    height: var(--chat-icon-size);
+    background-color: var(--secondary-bg-color);
+    border-radius: var(--chat-icon-border-radius);
+    padding: var(--chat-icon-padding);
+    border: var(--chat-message-border);
+}
+
+.message-body {
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-bg-color);
+    padding: var(--message-body-padding);
+    max-width: calc(100% - var(--chat-icon-size) - var(--gap-small));
+    border: var(--chat-message-border);
+}
+
+.user-message {
+    align-self: flex-end;
+    justify-content: flex-end;
+    width: 66%;
+}
+
+.server-message {
+    align-self: flex-start;
+    justify-content: flex-start;
+}
+
+.scroll-menu {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    overflow: auto;
+    white-space: nowrap;
+    gap: var(--gap-mini);
+    height: 10vh;
+    width: var(--chat-width);
+}
+
+.scroll-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-mini);
+    background-color: var(--secondary-bg-color);
+    border-color: var(--secondary-bg-color);
+    font-size: var(--font-size-small);
+    color: var(--text-default);
+}
+
+.scroll-btn-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.scroll-menu-arrow {
+    position: absolute;
+}
+
+.scroll-menu-arrow .right {
+    right: 0;
+    left: auto;
+}
+
+.scroll-menu-arrow .left {
+    left: 0;
+    right: auto;
+}
+
+.icon-btn {
+    height: 1.5rem;
+    width: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    border-radius: var(--border-radius);
+    border: none;
+    font-size: var(--font-size-small);
+    font-weight: bold;
+    line-height: 100%;
+    text-align: center;
+    cursor: pointer;
+    transition: none;
+    white-space: nowrap;
+}
+
+.icon-btn svg {
+    width: 100%;
+    height: 100%;
+}
+
+.skill-item {
+    display: flex;
+    gap: var(--gap-small);
+}
+
+.error-message {
+    border-color: var(--border-error);
+}

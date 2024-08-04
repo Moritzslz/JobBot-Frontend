@@ -1,5 +1,7 @@
 <script setup>
 import { ref, watch } from 'vue';
+import DeleteRight from "@/components/icons/DeleteRight.vue";
+import Send from "@/components/icons/Send.vue";
 
 // Emit function to communicate with the parent component
 const emit = defineEmits(["formSubmitted", "formClosed"]);
@@ -48,32 +50,18 @@ const closeForm = () => {
     <button class="close-button" @click="closeForm">X</button>
     <h3>Skills</h3>
     <div v-for="(skill, index) in skills" :key="index" class="skill-item">
+      <button type="button" class="icon-btn" @click="removeSkill(index)">
+        <DeleteRight></DeleteRight>
+      </button>
       <input type="text" v-model="skills[index]" placeholder="Enter a skill" />
-      <button type="button" @click="removeSkill(index)">Remove</button>
     </div>
     <button type="button" @click="addSkill">Add Skill</button>
-    <button type="button" @click="emitSkills">Save Skills</button>
+    <button type="button" class="icon-btn submit-btn" @click="emitSkills">
+      <Send></Send>
+    </button>
   </div>
 </template>
 
 <style scoped>
-.chat-form {
-  max-width: 600px;
-  background-color: gray;
-}
-.skill-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-.skill-item input {
-  flex: 1;
-}
-.skill-item button {
-  margin-left: 10px;
-}
-button {
-  display: block;
-  margin-top: 10px;
-}
+
 </style>
