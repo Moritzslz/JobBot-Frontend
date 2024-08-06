@@ -3,10 +3,13 @@ import Message from "@/components/Message.vue";
 import SourceSelect from "@/components/SourceSelect.vue";
 import '@/assets/css/main.css';
 import '@/assets/css/variables.css';
-import {ref, watch} from "vue";
+import {getCurrentInstance, ref, watch} from "vue";
 import {useRouter} from "vue-router";
 import Navbar from "@/components/Navbar.vue";
 import JobBotLogo from "@/components/icons/JobBotLogo.vue";
+
+const { appContext } = getCurrentInstance();
+const apiUrl = appContext.config.globalProperties.$apiUrl;
 
 const props = defineProps({
   hrefHome: String,
@@ -168,7 +171,7 @@ async function handleSubmit() {
   console.log(formData)
 
   try {
-    const response = await fetch('http://localhost:8080/v1/users', {
+    const response = await fetch(apiUrl + '/v1/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -11,6 +11,10 @@ import en from "./locale/en.json"
 
 import {createI18n} from "vue-i18n";
 
+const apiUrl = "http://localhost:8080"; // Global API URL
+const webSocketUrl = "ws://localhost:8080"; // Global API URL
+
+
 const i18n = createI18n({
     locale: "de",
     messages: {
@@ -20,6 +24,8 @@ const i18n = createI18n({
 })
 
 const app = createApp(App)
+app.config.globalProperties.$apiUrl = apiUrl;
+app.config.globalProperties.$webSocketUrl = webSocketUrl;
 app.use(router);
 app.use(i18n)
 app.mount('#app');

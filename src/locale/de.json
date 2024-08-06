@@ -4,17 +4,88 @@
   "close": "Schließen",
   "textLogin": "Anmelden",
   "textSignUp": "Registrieren",
+  "textProfile": "Profil",
+  "textDashboard": "Dashboard",
   "errors": {
-    "webSocketConnectionError": "Verbindung zum WebSocket konnte nicht hergestellt werden. Bitte überprüfen Sie Ihre Netzwerkverbindung und versuchen Sie es erneut.",
-    "networkError": "Netzwerkfehler. Bitte überprüfen Sie Ihre Internetverbindung.",
-    "serverError": "Serverfehler. Bitte versuchen Sie es später erneut.",
+    "networkError": "Netzwerkfehler. Bitte überprüfen deine Internetverbindung.",
+    "serverError": "Serverfehler. Bitte versuche es später erneut.",
     "notFound": "Die angeforderte Ressource wurde nicht gefunden.",
-    "unauthorized": "Sie sind nicht berechtigt, auf diese Ressource zuzugreifen.",
+    "unauthorized": "Du bist nicht berechtigt, auf diese Ressource zuzugreifen.",
     "forbidden": "Zugriff auf diese Ressource ist verboten.",
-    "validationError": "Es gab einen Fehler bei der Datenvalidierung. Bitte überprüfen Sie Ihre Eingaben und versuchen Sie es erneut.",
-    "timeoutError": "Die Anfrage ist abgelaufen. Bitte versuchen Sie es später erneut.",
-    "internalServerError": "Ein interner Serverfehler ist aufgetreten. Bitte versuchen Sie es später erneut.",
-    "formSubmissionError": "Es gab einen Fehler beim Absenden des Formulars. Bitte versuchen Sie es erneut."
+    "validationError": "Es gab einen Fehler bei der Datenvalidierung. Bitte überprüfen deine Eingaben und versuche es erneut.",
+    "timeoutError": "Die Anfrage ist abgelaufen. Bitte versuche es später erneut.",
+    "internalServerError": "Ein interner Serverfehler ist aufgetreten. Bitte versuche es später erneut.",
+    "formSubmissionError": "Es gab einen Fehler beim Absenden des Formulars. Bitte versuche es erneut."
+  },
+  "messages": {
+    "userCreated": "Ein neuer Benutzeraccount wurde erstellt. Bitte überprüfe die Details und stelle sicher, dass alles korrekt eingerichtet ist.",
+    "userEnabled": "Dein Account wurde aktiviert. Du kannst dich jetzt anmelden.",
+    "userUpdated": "Dein Profil wurde erfolgreich aktualisiert.",
+    "userUpdateFailed": "Das Profil konnte nicht aktualisiert werden. Bitte versuche es später erneut.",
+    "userProfileAccessDenied": "Der Zugriff auf das Benutzerprofil ist eingeschränkt. Es ist auf privat eingestellt.",
+    "userProfileViewRequested": "Das öffentliche Profil wurde erfolgreich aufgerufen.",
+    "tokenBalanceUpdated": "Dein Token-Guthaben wurde aktualisiert.",
+    "tokenBalanceInsufficient": "Du hast nicht genügend Tokens für diese Aktion.",
+    "tokensCredited": "Tokens wurden deinem Account gutgeschrieben.",
+    "tokensWithdrawn": "Tokens wurden von deinem Account abgebucht.",
+
+    "resumeCreated": "Dein Lebenslauf wurde erfolgreich erstellt.",
+    "resumeUploaded": "Dein Lebenslauf wurde hochgeladen.",
+    "resumeDownloaded": "Dein Lebenslauf wurde heruntergeladen.",
+    "resumeUpdated": "Dein Lebenslauf wurde aktualisiert.",
+    "resumeNotFound": "Der Lebenslauf konnte nicht gefunden werden.",
+    "resumeDownloadFailed": "Der Lebenslauf konnte nicht heruntergeladen werden. Bitte versuche es erneut.",
+    "resumeDeserializeError": "Es gab einen Fehler beim Verarbeiten der Lebenslauf-Daten.",
+
+    "coverLetterCreated": "Dein Bewerbungsschreiben wurde erstellt.",
+    "coverLetterDownloaded": "Dein Bewerbungsschreiben wurde heruntergeladen.",
+    "coverLetterUpdated": "Dein Bewerbungsschreiben wurde aktualisiert.",
+    "coverLetterNotFound": "Das Bewerbungsschreiben konnte nicht gefunden werden.",
+    "coverLetterDownloadFailed": "Das Bewerbungsschreiben konnte nicht heruntergeladen werden.",
+
+    "tokenExpired": "Dein Verifizierungstoken ist abgelaufen. Dein Account wurde gelöscht.",
+    "userNotFoundInvalidToken": "Der Benutzer konnte nicht gefunden werden. Das Token könnte ungültig sein.",
+    "recaptchaVerificationFailed": "Die Recaptcha-Überprüfung ist fehlgeschlagen. Bitte versuche es erneut.",
+
+    "passwordVerificationFailed": "Die Passwortüberprüfung ist fehlgeschlagen. Bitte überprüfe dein Passwort und versuche es erneut.",
+    "passwordResetRequested": "Das Passwort wurde zurückgesetzt.",
+    "passwordResetCompleted": "Das Passwort wurde erfolgreich zurückgesetzt.",
+
+    "emailSent": "Die E-Mail wurde erfolgreich gesendet.",
+    "sendingActivationEmail": "Aktivierungs-E-Mail wird gesendet...",
+    "sendingPasswordResetEmail": "E-Mail zum Zurücksetzen des Passworts wird gesendet...",
+    "sendingPasswordResetErrorEmail": "Fehler-E-Mail für das Zurücksetzen des Passworts wird gesendet...",
+    "sendingWelcomeEmail": "Willkommens-E-Mail wird gesendet...",
+    "emailSendFailed": "Das E-Mail-Senden ist fehlgeschlagen. Bitte überprüfe die Empfängeradresse und versuche es erneut.",
+
+    "fileUploadFailed": "Der Datei-Upload ist fehlgeschlagen. Bitte versuche es erneut.",
+    "invalidFileType": "Der Dateityp wird nicht unterstützt.",
+    "emptyFile": "Die Datei ist leer. Bitte lade eine gültige Datei hoch.",
+    "fileParseError": "Fehler beim Parsen des Datei-Inhalts. Bitte überprüfe das Dateiformat.",
+
+    "geminiMessageSendFailed": "Nachricht konnte nicht an Gemini gesendet werden. Bitte versuche es erneut.",
+    "geminiSessionClosed": "Die Gemini-Chat-Sitzung wurde geschlossen.",
+    "resumeSaveUnauthenticatedUser": "Lebenslauf konnte nicht gespeichert werden. Du musst eingeloggt sein.",
+    "tokenUsage": "Token-Nutzung aufgezeichnet.",
+    "tokenUsageAfterClose": "Tokens wurden nach Schließung der Sitzung verwendet.",
+    "functionCallError": "Fehler beim Aufruf der Funktion. Bitte kontaktiere den Support.",
+    "resumeRequired": "Ein Lebenslauf wird benötigt, aber nicht gefunden.",
+    "resumeSaveSuccessful": "Dein Lebenslauf wurde erfolgreich gespeichert.",
+    "resumeSaveFailed": "Lebenslauf konnte nicht gespeichert werden. Bitte versuche es erneut.",
+    "resumeParsingFailed": "Fehler beim Parsen des Lebenslaufs. Bitte stelle sicher, dass das Lebenslauf-Format korrekt ist.",
+    "coverLetterSaveSuccess": "Dein Bewerbungsschreiben wurde erfolgreich gespeichert.",
+    "coverLetterSaveFailed": "Bewerbungsschreiben konnte nicht gespeichert werden. Bitte versuche es erneut.",
+
+    "newWebSocketConnection": "Eine neue Verbindung wurde hergestellt.",
+    "webSocketConnectionClosed": "Die Verbindung wurde geschlossen.",
+    "webSocketConnectionCloseReason": "Die Verbindung wurde aufgrund von folgendem Grund geschlossen: ",
+    "webSocketAuthFailed": "Authentifizierung fehlgeschlagen. Bitte melde dich erneut an.",
+    "webSocketSessionCloseFailed": "Fehler beim Schließen der Sitzung.",
+    "webSocketSendMessageFailed": "Fehler beim Senden der Nachricht.",
+
+    "pdfCreation": "PDF wird erstellt...",
+    "pdfCreationFailed": "Fehler beim Erstellen des PDFs. Bitte versuche es erneut.",
+    "pdfCreationException": "Ein Fehler ist beim Erstellen des PDFs aufgetreten. Bitte kontaktiere den Support."
   },
   "sourceSelect": {
     "placeholder": "Quelle auswählen",
@@ -81,39 +152,131 @@
     "cookies": "Um dieses Video anzusehen, müssen alle Cookies akzeptiert werden. Bitte aktualisiere die Seite danach."
   },
   "chat": {
-    "welcomeMsg": "Wie kann ich dir heute behilflich sein?",
-    "createNewResumeMsg": "Lass uns einen neuen Lebenslauf erstellen! Wähle, was du hinzufügen möchtest:",
-    "workExperienceMsg": "Bitte geben deine Berufserfahrung an.",
-    "enterDescription": "Bitte beschreibe deine Aufgaben und Verantwortlichkeiten"
-  },
-  "chatButton": {
-    "createNewResume": "Neuen Lebenslauf erstellen",
-    "createNewCoverLetter": "Neues Anschreiben erstellen",
-    "uploadResume": "Lebenslauf hochladen",
-    "improveResume": "Lebenslauf verbessern",
-    "workExperience": "Berufserfahrung",
-    "education": "Ausbildung",
-    "skills": "Fähigkeiten"
+    "successResume": "Dein Lebenslauf wurde erfolgreich gespeichert! Du kannst ihn in deinem Profil ansehen, bearbeiten und herunterladen.",
+    "successCoverLetter": "Dein Anschreiben wurde erfolgreich gespeichert! Du kannst es in deinem Profil ansehen und herunterladen.",
+    "feedback": "Ich hoffe, dass ich dir helfen konnte! Um JobBot noch besser zu machen, würden wir uns sehr über dein Feedback freuen. Bitte nimm dir 2-3 Minuten Zeit für unsere kurze Umfrage. :)",
+    "feedbackButton": "Zur Feedback-Umfrage",
+    "donation": "Wenn du JobBot finanziell unterstützen möchtest, kannst du hier einen beliebigen Betrag spenden. :)",
+    "donationButton": "Mit PayPal spenden",
+    "remainingChars": "Zeichen übrig"
   },
   "workExperienceForm": {
-    "jobTitle": "Berufsbezeichnung",
+    "name": "Berufserfahrung hinzufügen",
+    "prompt": "diese Berufserfahrung",
+    "jobTitle": "Berufsbezeichnung/Position",
     "employer": "Arbeitgeber",
-    "city": "Stadt",
-    "startDate": "Anfangsdatum",
-    "endDate": "Enddatum"
+    "city": "Stadt (Optional)",
+    "country": "Land (Optional)",
+    "presentlyEmployed": "Aktueller Arbeitsplatz",
+    "startDate": "Startdatum (YYYY.MM)",
+    "endDate": "Enddatum (YYYY.MM) (Optional)",
+    "bulletListName": "Aufgaben und Verantwortlichkeiten",
+    "bulletListPlaceholder": "Füge Aufgaben und Verantwortlichkeiten hinzu, jeweils getrennt durch eine neue Zeile."
   },
   "educationForm": {
-    "schoolName": "Schulname",
-    "degree": "Abschluss",
-    "fieldOfStudy": "Studienfeld",
-    "startDate": "Anfangsdatum",
-    "endDate": "Enddatum"
+    "name": "Bildung hinzufügen",
+    "prompt": "diese Bildung",
+    "school": "Schule/Universität",
+    "degree": "Abschluss (Abitur, B.Sc., ...)",
+    "fieldOfStudy": "Studienfach",
+    "city": "Stadt (Optional)",
+    "country": "Land (Optional)",
+    "expectedGraduation": "Erwartetes Abschlussdatum",
+    "startDate": "Startdatum (YYYY.MM)",
+    "endDate": "Enddatum (YYYY.MM) (Optional)",
+    "gpa": "Notendurchschnitt",
+    "bulletListName": "Aktivitäten und Erfolge (Optional)",
+    "bulletListPlaceholder": "Füge Aktivitäten und Erfolge hinzu, jeweils getrennt durch eine neue Zeile."
   },
   "skillsForm": {
-    "skillName": "Fähigkeit",
-    "proficiency": "Kompetenz"
+    "name": "Fähigkeiten (Hard & Soft Skills) hinzufügen",
+    "prompt": "dieses Fähigkeiten",
+    "skillPlaceholder": "Fähigkeit",
+    "addButton": "Fähigkeit hinzufügen"
   },
-  "chatForm": {
-    "submit": "Einreichen"
+  "personalProjectsForm": {
+    "name": "Persönliches Projekt hinzufügen",
+    "prompt": "dieses persönliche Projekt",
+    "projectTitle": "Projekttitel",
+    "description": "Beschreibung (Optional)",
+    "descriptionPlaceholder": "Kurzbeschreibung des Projekts",
+    "technologiesUsed": "Genutzte Technologien (Kommagetrennt) (Optional)",
+    "technologiesUsedPlaceholder": "z.B.: Photoshop, SolidWorks, Java, ...",
+    "role": "Rolle",
+    "startDate": "Startdatum (YYYY-MM)",
+    "endDate": "Enddatum (YYYY-MM) (Optional)",
+    "bulletListName": "Aktivitäten und Verantwortlichkeiten",
+    "bulletListPlaceholder": "Füge Aktivitäten und Verantwortlichkeiten hinzu, jeweils getrennt durch eine neue Zeile."
+  },
+  "additionalExperienceForm": {
+    "name": "Weitere Erfahrung hinzufügen",
+    "prompt": "diese weitere Erfahrung",
+    "experienceTitle": "Erfahrungstitel",
+    "organization": "Organisation",
+    "city": "Stadt (Optional)",
+    "country": "Land (Optional)",
+    "startDate": "Startdatum (YYYY-MM)",
+    "endDate": "Enddatum (YYYY-MM) (Optional)",
+    "bulletListName": "Details (Optional)",
+    "bulletListPlaceholder": "Füge Details hinzu, jeweils getrennt durch eine neue Zeile."
+  },
+  "awardsForm": {
+    "name": "Auszeichnung hinzufügen",
+    "prompt": "diese Auszeichnung",
+    "awardName": "Auszeichnung",
+    "issuer": "Verliehen von",
+    "issueDate": "Verleihungsdatum (YYYY-MM)",
+    "url": "URL (Optional)",
+    "bulletListName": "Details (Optional)",
+    "bulletListPlaceholder": "Füge Details hinzu, jeweils getrennt durch eine neue Zeile."
+  },
+  "certificationsForm": {
+    "name": "Zertifizierung hinzufügen",
+    "prompt": "diese Zertifizierung",
+    "certificateName": "Zertifikat/Urkunde",
+    "issuer": "Aussteller",
+    "issueDate": "Ausstellungsdatum (YYYY-MM)",
+    "url": "URL (Optional)",
+    "bulletListName": "Details (Optional)",
+    "bulletListPlaceholder": "Füge Details hinzu, jeweils getrennt durch eine neue Zeile."
+  },
+  "languagesForm": {
+    "name": "Sprachen hinzufügen",
+    "prompt": "diese Sprachen",
+    "language": "Sprache",
+    "proficiencyCEFR": "Kenntnisstand (CEFR)",
+    "proficiencyPlaceholder": "Wähle deinen Kenntnisstand aus",
+    "addButton": "Sprache hinzufügen"
+  },
+  "hobbiesForm": {
+    "name": "Hobbies hinzufügen",
+    "prompt": "diese Hobbies",
+    "hobbyPlaceholder": "Hobby",
+    "addButton": "Hobby hinzufügen"
+  },
+  "bulletPointEditor": {
+    "name": "Wähle Stichpunkte aus und passe sie an",
+    "addButton": "Stichpunkt hinzufügen"
+  },
+  "languageSelector": {
+    "name": "Wähle die Sprache deines Lebenslaufs",
+    "language": "Sprache",
+    "german": "Deutsch",
+    "english": "Englisch"
+  },
+  "jobDescriptionForm": {
+    "name": "Lass deinen Lebenslauf auf eine bestimmte Stelle anpassen",
+    "jobTitle": "Berufsbezeichnung/Position",
+    "companyName": "Unternehmen",
+    "jobDescription": "Stellenbeschreibung",
+    "jobDescriptionPlaceholder": "Bitte füge die Stellenbeschreibung hier ein."
+  },
+  "resumePrompts": {
+    "selectLanguage": "Ich möchte meinen Lebenslauf auf {} erstellen.",
+    "tailorToJobPosting": "Bitte passe meinen Lebenslauf für dieses Unternehmen und diese Position an: ",
+    "selectBulletPoints": "Danke, ich habe diese Stichpunkte ausgewählt und angepasst. Bitte speichere sie in meinem Lebenslauf: ",
+    "addToResumeAndSuggestBulletPoints": "Bitte füge diese {} meinem Lebenslauf hinzu und schlage passende Stichpunkte vor: ",
+    "addToResume": "Bitte füge {} meinem Lebenslauf hinzu: ",
+    "saveResume": "Vielen Dank für deine Hilfe. Nun nimm dir einen Moment Zeit und berücksichtige den gesamten Chatverlauf. Ich bin fertig und möchte meinen Lebenslauf nun speichern."
   }
 }

@@ -1,20 +1,53 @@
 <script setup>
-import { ref } from "vue";
+import {ref, watch} from "vue";
 import Send from "@/components/icons/Send.vue";
+import {useI18n} from "vue-i18n";
+import DeleteRight from "@/components/icons/DeleteRight.vue";
+
+const { t } = useI18n();
 
 // Emit function to communicate with the parent component
 const emit = defineEmits(["formSubmitted", "formClosed"]);
 
-const hobby = ref({
-  name: ""
+// Define props
+const props = defineProps({
+  initialHobbies: {
+    type: Array,
+    default: () => []
+  }
 });
 
-const submitForm = () => {
-  // Log the hobby JSON to the console
-  console.log(JSON.stringify(hobby.value, null, 2));
+// Reactive hobbies array
+const hobbies = ref([...props.initialHobbies]);
 
+// Watch for changes in props.initialSkills and update skills
+watch(() => props.initialHobbies, (newVal) => {
+  hobbies.value = [...newVal];
+});
+
+// Method to add a new skill
+const addHobby = () => {
+  hobbies.value.push('');
+};
+
+// Method to remove a skill
+const removeHobby = (index) => {
+  hobbies.value.splice(index, 1);
+};
+
+const emitHobbies = () => {
+  let json = JSON.stringify(hobbies.value, null, 2);
+  let prompt = t("resumePrompts.addToResume").replace("{}", t("hobbiesForm.prompt")) + json;
+
+  // Create a prettified message
+  let message = t("resumePrompts.addToResume").replace("{}", t("hobbiesForm.prompt")) + "<br>";
+
+  // Loop through all keys and values
+  for (const bulletPoint of Object.entries(hobbies.value)) {
+    message += `- ${bulletPoint[1]}<br>`;
+  }
   // Emit the form data to the parent component
-  emit("formSubmitted", hobby.value);
+  emit("formSubmitted", message, prompt);
 
   // Reset and close the form
   resetForm();
@@ -22,9 +55,7 @@ const submitForm = () => {
 };
 
 const resetForm = () => {
-  hobby.value = {
-    name: ""
-  };
+  hobbies.value = [];
 };
 
 const closeForm = () => {
@@ -35,16 +66,17 @@ const closeForm = () => {
 <template>
   <div class="chat-form" id="hobbies-form">
     <button class="close-button" @click="closeForm">X</button>
-    <h2>Hobby</h2>
-    <form @submit.prevent="submitForm">
-      <div class="form-group">
-        <label for="name">Hobby Name</label>
-        <input type="text" id="name" v-model="hobby.name" required />
-      </div>
-      <button type="submit" class="submit-icon-btn">
-        <Send></Send>
+    <h3>{{ t("hobbiesForm.name") }}</h3>
+    <div v-for="(skill, index) in hobbies" :key="index" class="hobby-item">
+      <button type="button" class="icon-btn" @click="removeHobby(index)">
+        <DeleteRight></DeleteRight>
       </button>
-    </form>
+      <input type="text" v-model="hobbies[index]" :placeholder='t("hobbiesForm.hobbyPlaceholder")' />
+    </div>
+    <button type="button" @click="addHobby">{{ t("hobbiesForm.addButton") }}</button>
+    <button type="button" class="submit-icon-btn" @click="emitHobbies">
+      <Send></Send>
+    </button>
   </div>
 </template>
 

@@ -1,35 +1,37 @@
 <script setup>
 import {computed, ref} from "vue";
 import Send from "@/components/icons/Send.vue";
+import {useI18n} from "vue-i18n";
+
+const { t } = useI18n();
 
 const emit = defineEmits(["formSubmitted", "formClosed"]);
 
 const jobDescription = ref({
   jobTitle: "",
   companyName: "",
-  description: ""
+  jobDescription: ""
 });
 
 const MAX_DESCRIPTION_LENGTH = 5000;
 
 const submitForm = () => {
-  // Log the job description JSON to the console
-  console.log(JSON.stringify(jobDescription.value, null, 2));
+  let json = JSON.stringify(jobDescription.value, null, 2);
+  let prompt = t("resumePrompts.tailorToJobPosting") + json;
 
+  // Create a prettified message
+  let message = t("resumePrompts.tailorToJobPosting") + "<br>";
+
+  // Loop through all keys and values
+  for (const [key, value] of Object.entries(jobDescription.value)) {
+    message += `${t(`jobDescriptionForm.${key}`)}: ${value}<br>`;
+  }
   // Emit the form data to the parent component
-  emit("formSubmitted", jobDescription.value);
+  emit("formSubmitted", message, prompt);
 
-  // Reset and close the form
-  resetForm();
+  // Hide and close the form
   emit("formClosed");
-};
-
-const resetForm = () => {
-  jobDescription.value = {
-    jobTitle: "",
-    companyName: "",
-    description: ""
-  };
+  emit("hideForm")
 };
 
 // Define the maximum length for the description
@@ -37,7 +39,7 @@ const MAX_TEXTAREA_LENGTH = 4000;
 
 // Computed property for remaining characters
 const remainingChars = computed(() => {
-  return MAX_TEXTAREA_LENGTH - jobDescription.value.description.length;
+  return MAX_TEXTAREA_LENGTH - jobDescription.value.jobDescription.length;
 });
 
 const closeForm = () => {
@@ -48,28 +50,28 @@ const closeForm = () => {
 <template>
   <div class="chat-form" id="job-description-form">
     <button class="close-button" @click="closeForm">X</button>
-    <h2>Job Description</h2>
+    <h2>{{ t("jobDescriptionForm.name") }}</h2>
     <form @submit.prevent="submitForm">
       <div class="form-group">
-        <label for="jobTitle">Job Title</label>
+        <label for="jobTitle">{{ t("jobDescriptionForm.jobTitle") }}</label>
         <input type="text" id="jobTitle" v-model="jobDescription.jobTitle" required />
       </div>
       <div class="form-group">
-        <label for="companyName">Company Name</label>
+        <label for="companyName">{{ t("jobDescriptionForm.companyName") }}</label>
         <input type="text" id="companyName" v-model="jobDescription.companyName" required />
       </div>
       <div class="form-group">
-        <label for="description">Job Description</label>
+        <label for="description">{{ t("jobDescriptionForm.jobDescription") }}</label>
         <textarea
             id="description"
-            v-model="jobDescription.description"
-            placeholder="Paste job description here (max 500 characters)"
+            v-model="jobDescription.jobDescription"
+            :placeholder='t("jobDescriptionForm.jobDescriptionPlaceholder")'
             :maxlength="MAX_TEXTAREA_LENGTH"
             rows="10"
             required
         ></textarea>
         <div class="char-counter">
-          {{ remainingChars }} characters left
+          {{ remainingChars }} {{ t("chat.remainingChars") }}
         </div>
       </div>
       <button type="submit" class="submit-icon-btn">

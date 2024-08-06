@@ -1,6 +1,5 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import Chat from "@/components/chat/CreateResumeChat.vue";
 import '@/assets/css/main.css';
 import '@/assets/css/variables.css';
 import '@/assets/css/new-main.css'

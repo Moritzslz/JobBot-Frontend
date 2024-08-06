@@ -4,6 +4,7 @@
 }
 
 .chat-ui {
+    width: 100%;
     max-width: var(--chat-width);
     padding-bottom: 10vh;
 }

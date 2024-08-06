@@ -4,8 +4,9 @@
   "close": "Close",
   "textLogin": "Log in",
   "textSignUp": "Sign up",
+  "textProfile": "Profile",
+  "textDashboard": "Dashboard",
   "errors": {
-    "webSocketConnectionError": "Unable to connect to the WebSocket. Please check your network connection and try again.",
     "networkError": "Network error. Please check your internet connection.",
     "serverError": "Server error. Please try again later.",
     "notFound": "The requested resource was not found.",
@@ -15,6 +16,77 @@
     "timeoutError": "The request timed out. Please try again later.",
     "internalServerError": "An internal server error occurred. Please try again later.",
     "formSubmissionError": "There was an error submitting the form. Please try again."
+  },
+  "messages": {
+    "userCreated": "A new user account has been created. Please verify the details and ensure correct setup.",
+    "userEnabled": "Your account has been enabled. You can now log in.",
+    "userUpdated": "Your profile has been updated successfully.",
+    "userUpdateFailed": "Failed to update your profile. Please try again later.",
+    "userProfileAccessDenied": "Access to the user’s profile is restricted. It is set to private.",
+    "userProfileViewRequested": "The public profile was successfully accessed.",
+    "tokenBalanceUpdated": "Your token balance has been updated.",
+    "tokenBalanceInsufficient": "You do not have enough tokens for this action.",
+    "tokensCredited": "Tokens have been credited to your account.",
+    "tokensWithdrawn": "Tokens have been withdrawn from your account.",
+
+    "resumeCreated": "Your resume has been created successfully.",
+    "resumeUploaded": "Your resume has been uploaded.",
+    "resumeDownloaded": "Your resume has been downloaded.",
+    "resumeUpdated": "Your resume has been updated.",
+    "resumeNotFound": "The resume could not be found.",
+    "resumeDownloadFailed": "Failed to download your resume. Please try again.",
+    "resumeDeserializeError": "There was an error processing your resume data.",
+
+    "coverLetterCreated": "Your cover letter has been created.",
+    "coverLetterDownloaded": "Your cover letter has been downloaded.",
+    "coverLetterUpdated": "Your cover letter has been updated.",
+    "coverLetterNotFound": "The cover letter could not be found.",
+    "coverLetterDownloadFailed": "Failed to download your cover letter.",
+
+    "tokenExpired": "Your verification token has expired. Your account has been deleted.",
+    "userNotFoundInvalidToken": "The user could not be found. The token may be invalid.",
+    "recaptchaVerificationFailed": "Recaptcha verification failed. Please try again.",
+
+    "passwordVerificationFailed": "Password verification failed. Please check your password and try again.",
+    "passwordResetRequested": "Password reset has been requested.",
+    "passwordResetCompleted": "Password reset has been successfully completed.",
+
+    "emailSent": "The email has been sent successfully.",
+    "sendingActivationEmail": "Sending activation email...",
+    "sendingPasswordResetEmail": "Sending password reset email...",
+    "sendingPasswordResetErrorEmail": "Sending error email for password reset...",
+    "sendingWelcomeEmail": "Sending welcome email...",
+    "emailSendFailed": "Failed to send email. Please check the recipient's address and try again.",
+
+    "fileUploadFailed": "File upload failed. Please try again.",
+    "invalidFileType": "The file type is not supported.",
+    "emptyFile": "The file is empty. Please upload a valid file.",
+    "fileParseError": "Failed to parse the file content. Please check the file format.",
+
+    "geminiMessageSendFailed": "Failed to send message to Gemini. Please try again.",
+    "geminiSessionClosed": "The Gemini chat session has been closed.",
+    "resumeSaveUnauthenticatedUser": "Failed to save resume. You need to be logged in.",
+    "tokenUsage": "Token usage recorded.",
+    "tokenUsageAfterClose": "Tokens were used after the session closed.",
+    "functionCallError": "Error calling the function. Please contact support.",
+    "resumeRequired": "A resume is required but was not found.",
+    "resumeSaveSuccessful": "Your resume has been saved successfully.",
+    "resumeSaveFailed": "Failed to save your resume. Please try again.",
+    "resumeParsingFailed": "Failed to parse the resume. Please ensure the resume format is correct.",
+    "coverLetterSaveSuccess": "Your cover letter has been saved successfully.",
+    "coverLetterSaveFailed": "Failed to save your cover letter. Please try again.",
+
+    "newWebSocketConnection": "A new connection has been established.",
+    "webSocketConnectionClosed": "The connection has been closed.",
+    "webSocketConnectionCloseReason": "The connection was closed due to: ",
+    "webSocketAuthFailed": "Authentication failed. Please log in again.",
+    "webSocketSessionCloseFailed": "Failed to close the session.",
+    "webSocketSendMessageFailed": "Failed to send message.",
+
+
+    "pdfCreation": "Creating PDF...",
+    "pdfCreationFailed": "Failed to create PDF. Please try again.",
+    "pdfCreationException": "An error occurred while creating the PDF. Please contact support."
   },
   "sourceSelect": {
     "placeholder": "Select a source",
@@ -81,39 +153,131 @@
     "cookies": "To view this video, all cookies must be accepted. Please refresh the page after accepting them."
   },
   "chat": {
-    "welcomeMsg": "How can I assist you today?",
-    "createNewResumeMsg": "Let's create a new resume! Choose what you want to add:",
-    "workExperienceMsg": "Please provide your work experience details.",
-    "enterDescription": "Please describe your tasks and responsibilities"
-  },
-  "chatButton": {
-    "createNewResume": "Create New Resume",
-    "createNewCoverLetter": "Create New Cover Letter",
-    "uploadResume": "Upload Resume",
-    "improveResume": "Improve Resume",
-    "workExperience": "Work Experience",
-    "education": "Education",
-    "skills": "Skills"
+    "successResume": "Your resume has been successfully saved! You can view, edit, and download it in your profile.",
+    "successCoverLetter": "Your cover letter has been successfully saved! You can view and download it in your profile.",
+    "feedback": "I hope I was able to help you! To make JobBot even better, we would really appreciate your feedback. Please take 2-3 minutes to complete our short survey. :)",
+    "feedbackButton": "To the Feedback Survey",
+    "donation": "If you would like to support JobBot financially, you can donate any amount here. :)",
+    "donationButton": "Donate with PayPal",
+    "remainingChars": "characters left"
   },
   "workExperienceForm": {
-    "jobTitle": "Job Title",
+    "name": "Add Work Experience",
+    "prompt": "this work experience",
+    "jobTitle": "Job Title/Position",
     "employer": "Employer",
-    "city": "City",
-    "startDate": "Start Date",
-    "endDate": "End Date"
+    "city": "City (Optional)",
+    "country": "Country (Optional)",
+    "presentlyEmployed": "Currently Employed",
+    "startDate": "Start Date (YYYY.MM)",
+    "endDate": "End Date (YYYY.MM) (Optional)",
+    "bulletListName": "Tasks and Responsibilities",
+    "bulletListPlaceholder": "Add tasks and responsibilities, each separated by a new line."
   },
   "educationForm": {
-    "schoolName": "School Name",
-    "degree": "Degree",
+    "name": "Add Education",
+    "prompt": "this education",
+    "school": "School/University",
+    "degree": "Degree (High School Diploma, B.Sc., ...)",
     "fieldOfStudy": "Field of Study",
-    "startDate": "Start Date",
-    "endDate": "End Date"
+    "city": "City (Optional)",
+    "country": "Country (Optional)",
+    "expectedGraduation": "Expected Graduation Date",
+    "startDate": "Start Date (YYYY.MM)",
+    "endDate": "End Date (YYYY.MM) (Optional)",
+    "gpa": "GPA",
+    "bulletListName": "Activities and Achievements (Optional)",
+    "bulletListPlaceholder": "Add activities and achievements, each separated by a new line."
   },
   "skillsForm": {
-    "skillName": "Skill Name",
-    "proficiency": "Proficiency"
+    "name": "Add Skills (Hard & Soft Skills)",
+    "prompt": "these skills",
+    "skillPlaceholder": "Skill",
+    "addButton": "Add Skill"
   },
-  "chatForm": {
-    "submit": "Submit"
+  "personalProjectsForm": {
+    "name": "Add Personal Project",
+    "prompt": "this personal project",
+    "projectTitle": "Project Title",
+    "description": "Description (Optional)",
+    "descriptionPlaceholder": "Short description of the project",
+    "technologiesUsed": "Technologies Used (Comma Separated) (Optional)",
+    "technologiesUsedPlaceholder": "e.g.: Photoshop, SolidWorks, Java, ...",
+    "role": "Role",
+    "startDate": "Start Date (YYYY-MM)",
+    "endDate": "End Date (YYYY-MM) (Optional)",
+    "bulletListName": "Activities and Responsibilities",
+    "bulletListPlaceholder": "Add activities and responsibilities, each separated by a new line."
+  },
+  "additionalExperienceForm": {
+    "name": "Add Additional Experience",
+    "prompt": "this additional experience",
+    "experienceTitle": "Experience Title",
+    "organization": "Organization",
+    "city": "City (Optional)",
+    "country": "Country (Optional)",
+    "startDate": "Start Date (YYYY-MM)",
+    "endDate": "End Date (YYYY-MM) (Optional)",
+    "bulletListName": "Details (Optional)",
+    "bulletListPlaceholder": "Add details, each separated by a new line."
+  },
+  "awardsForm": {
+    "name": "Add Award",
+    "prompt": "this award",
+    "awardName": "Award",
+    "issuer": "Issuer",
+    "issueDate": "Issue Date (YYYY-MM)",
+    "url": "URL (Optional)",
+    "bulletListName": "Details (Optional)",
+    "bulletListPlaceholder": "Add details, each separated by a new line."
+  },
+  "certificationsForm": {
+    "name": "Add Certification",
+    "prompt": "this certification",
+    "certificateName": "Certificate",
+    "issuer": "Issuer",
+    "issueDate": "Issue Date (YYYY-MM)",
+    "url": "URL (Optional)",
+    "bulletListName": "Details (Optional)",
+    "bulletListPlaceholder": "Add details, each separated by a new line."
+  },
+  "languagesForm": {
+    "name": "Add Languages",
+    "prompt": "these languages",
+    "language": "Language",
+    "proficiencyCEFR": "Proficiency (CEFR)",
+    "proficiencyPlaceholder": "Select your proficiency level",
+    "addButton": "Add Language"
+  },
+  "hobbiesForm": {
+    "name": "Add Hobbies",
+    "prompt": "these hobbies",
+    "hobbyPlaceholder": "Hobby",
+    "addButton": "Add Hobby"
+  },
+  "bulletPointEditor": {
+    "name": "Select and Customize Bullet Points",
+    "addButton": "Add Bullet Point"
+  },
+  "languageSelector": {
+    "name": "Select the Language of Your Resume",
+    "language": "Language",
+    "german": "German",
+    "english": "English"
+  },
+  "jobDescriptionForm": {
+    "name": "Tailor Your Resume to a Specific Job",
+    "jobTitle": "Job Title/Position",
+    "companyName": "Company",
+    "jobDescription": "Job Description",
+    "jobDescriptionPlaceholder": "Please paste the job description here."
+  },
+  "resumePrompts": {
+    "selectLanguage": "I want to create my resume in {}.",
+    "tailorToJobPosting": "Please tailor my resume for this company and position: ",
+    "selectBulletPoints": "Thank you, I have selected and customized these bullet points. Please save them in my resume: ",
+    "addToResumeAndSuggestBulletPoints": "Please add {} to my resume and suggest appropriate bullet points: ",
+    "addToResume": "Please add these {} to my resume: ",
+    "saveResume": "Thank you for your help. Now take a moment and consider the entire chat history. I am finished and would like to save my resume now."
   }
 }

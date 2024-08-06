@@ -1,6 +1,9 @@
 <script setup>
 import {computed, ref} from "vue";
 import Send from "@/components/icons/Send.vue";
+import {useI18n} from "vue-i18n";
+
+const { t } = useI18n();
 
 // Emit function to communicate with the parent component
 const emit = defineEmits(["formSubmitted", "formClosed"]);
@@ -19,14 +22,28 @@ const workExperience = ref({
 const responsibilities = ref("");
 
 const submitForm = () => {
-  // Split responsibilities into a bullet list
+  // Split achievements into a bullet list
   workExperience.value.bulletList = responsibilities.value.split("\n").filter(line => line.trim() !== "");
 
-  // Log the work experience JSON to the console
-  console.log(JSON.stringify(workExperience.value, null, 2));
+  let json = JSON.stringify(workExperience.value, null, 2);
+  let prompt = t("resumePrompts.addToResumeAndSuggestBulletPoints").replace("{}", t("workExperienceForm.prompt")) + json;
 
+  // Create a prettified message
+  let message = t("resumePrompts.addToResumeAndSuggestBulletPoints").replace("{}", t("workExperienceForm.prompt")) + "<br>";
+
+  // Loop through all keys and values
+  for (const [key, value] of Object.entries(workExperience.value)) {
+    if (key === "bulletList") {
+      message += `Details:<br>`;
+      value.forEach(bullet => {
+        message += `  - ${bullet}<br>`;
+      });
+    } else {
+      message += `${t(`workExperienceForm.${key}`)}: ${value}<br>`;
+    }
+  }
   // Emit the form data to the parent component
-  emit("formSubmitted", workExperience.value);
+  emit("formSubmitted", message, prompt);
 
   // Reset and close the form
   resetForm();
@@ -63,43 +80,43 @@ const closeForm = () => {
 <template>
   <div class="chat-form" id="work-experience-form">
     <button class="close-button" @click="closeForm">X</button>
-    <h2>Work Experience</h2>
+    <h2>{{ t("workExperienceForm.name") }}</h2>
     <form @submit.prevent="submitForm">
       <div class="form-group">
-        <label for="jobTitle">Job Title</label>
+        <label for="jobTitle">{{ t("workExperienceForm.jobTitle") }}</label>
         <input type="text" id="jobTitle" v-model="workExperience.jobTitle" required />
       </div>
       <div class="form-group">
-        <label for="employer">Employer</label>
+        <label for="employer">{{ t("workExperienceForm.employer") }}</label>
         <input type="text" id="employer" v-model="workExperience.employer" required />
       </div>
       <div class="form-group">
-        <label for="city">City (Optional)</label>
+        <label for="city">{{ t("workExperienceForm.city") }}</label>
         <input type="text" id="city" v-model="workExperience.city" />
       </div>
       <div class="form-group">
-        <label for="country">Country (Optional)</label>
+        <label for="country">{{ t("workExperienceForm.country") }}</label>
         <input type="text" id="country" v-model="workExperience.country" />
       </div>
       <div class="form-group">
-        <label for="startDate">Start Date (YYYY-MM)</label>
+        <label for="startDate">{{ t("workExperienceForm.startDate") }}</label>
         <input type="month" id="startDate" v-model="workExperience.startDate" required />
       </div>
       <div class="form-group">
-        <label for="endDate">End Date (YYYY-MM)</label>
+        <label for="endDate">{{ t("workExperienceForm.endDate") }}</label>
         <input type="month" id="endDate" v-model="workExperience.endDate" :disabled="workExperience.presentlyEmployed" />
       </div>
       <div class="form-group">
         <label>
           <input type="checkbox" v-model="workExperience.presentlyEmployed" />
-          Presently Employed
+          {{ t("workExperienceForm.presentlyEmployed") }}
         </label>
       </div>
       <div class="form-group">
-        <label for="responsibilities">Responsibilities / Achievements (Optional)</label>
-        <textarea id="responsibilities" v-model="responsibilities" :maxlength="MAX_TEXTAREA_LENGTH" placeholder="Enter responsibilities or achievements, separated by new lines"></textarea>
+        <label for="responsibilities">{{ t("workExperienceForm.bulletListName") }}</label>
+        <textarea id="responsibilities" v-model="responsibilities" :maxlength="MAX_TEXTAREA_LENGTH" :placeholder='t("workExperienceForm.bulletListPlaceholder")'></textarea>
         <div class="char-counter">
-          {{ remainingChars }} characters left
+          {{ remainingChars }} {{ t("chat.remainingChars") }}
         </div>
       </div>
       <button type="submit" class="submit-icon-btn">

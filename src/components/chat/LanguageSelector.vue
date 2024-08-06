@@ -1,21 +1,25 @@
 <script setup>
 import { ref } from "vue";
 import Send from "@/components/icons/Send.vue";
+import {useI18n} from "vue-i18n";
+
+const { t } = useI18n();
 
 const emit = defineEmits(["formSubmitted", "formClosed"]);
 
-const selectedLanguage = ref("English");
+const selectedLanguage = ref("German");
 
-const languages = ["English", "German"];
+const languages = [t("languageSelector.german"), t("languageSelector.english")];
 
 const selectLanguage = () => {
-  console.log("Selected Language:", selectedLanguage.value);
+  let message = t("resumePrompts.selectLanguage").replace("{}", selectedLanguage.value);
 
   // Emit the form data to the parent component
-  emit("formSubmitted", selectedLanguage.value);
+  emit("formSubmitted", message, message);
 
-  // Reset and close the form
+  // Hide and close the form
   emit("formClosed");
+  emit("hideForm")
 };
 
 const closeForm = () => {
@@ -26,10 +30,10 @@ const closeForm = () => {
 <template>
   <div class="chat-form" id="language-selector">
     <button class="close-button" @click="closeForm">X</button>
-    <h2>Select Language</h2>
+    <h2>{{ t("languageSelector.name") }}</h2>
     <form @submit.prevent="selectLanguage">
       <div class="form-group">
-        <label for="language">Language</label>
+        <label for="language">{{ t("languageSelector.language") }}</label>
         <select id="language" v-model="selectedLanguage">
           <option v-for="language in languages" :key="language" :value="language">
             {{ language }}

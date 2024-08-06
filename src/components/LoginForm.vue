@@ -2,10 +2,13 @@
 import Message from "@/components/Message.vue";
 import '@/assets/css/main.css';
 import '@/assets/css/variables.css';
-import {ref} from "vue";
+import {getCurrentInstance, ref} from "vue";
 import {useRouter} from "vue-router";
 import Navbar from "@/components/Navbar.vue";
 import JobBotLogo from "@/components/icons/JobBotLogo.vue";
+
+const { appContext } = getCurrentInstance();
+const apiUrl = appContext.config.globalProperties.$apiUrl;
 
 defineProps({
   hrefHome: String,
@@ -47,7 +50,7 @@ async function handleSubmit() {
     formDataObject.append('username', formData.value.username);
     formDataObject.append('password', formData.value.password);
 
-    const response = await fetch('http://localhost:8080/v1/auth/login', {
+    const response = await fetch(apiUrl + '/v1/auth/login', {
       method: 'POST',
       body: formDataObject,
       credentials: 'include' // to include cookies
