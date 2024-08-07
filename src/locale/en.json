@@ -69,7 +69,7 @@
     "tokenUsage": "Token usage recorded.",
     "tokenUsageAfterClose": "Tokens were used after the session closed.",
     "functionCallError": "Error calling the function. Please contact support.",
-    "resumeRequired": "A resume is required but was not found.",
+    "resumeRequired": "It looks like you don't have a resume saved on JobBot yet. Please create a new resume or upload an existing one first.",
     "resumeSaveSuccessful": "Your resume has been saved successfully.",
     "resumeSaveFailed": "Failed to save your resume. Please try again.",
     "resumeParsingFailed": "Failed to parse the resume. Please ensure the resume format is correct.",
@@ -259,25 +259,54 @@
     "name": "Select and Customize Bullet Points",
     "addButton": "Add Bullet Point"
   },
-  "languageSelector": {
-    "name": "Select the Language of Your Resume",
-    "language": "Language",
-    "german": "German",
-    "english": "English"
-  },
   "jobDescriptionForm": {
-    "name": "Tailor Your Resume to a Specific Job",
-    "jobTitle": "Job Title/Position",
-    "companyName": "Company",
-    "jobDescription": "Job Description",
-    "jobDescriptionPlaceholder": "Please paste the job description here."
+    "resume": {
+      "name": "Tailor Your Resume to a Specific Job",
+      "jobTitle": "Job Title/Position",
+      "companyName": "Company",
+      "jobDescription": "Job Description",
+      "jobDescriptionPlaceholder": "Please paste the job description here."
+    },
+    "coverletter": {
+      "name": "Tailor Your Cover Letter to a Specific Job",
+      "jobTitle": "Job Title/Position",
+      "companyName": "Company",
+      "jobDescription": "Job Description",
+      "jobDescriptionPlaceholder": "Please paste the job description here."
+    }
+  },
+  "languageSelector": {
+    "resume": {
+      "name": "Select the Language of Your Resume",
+      "language": "Language",
+      "german": "German",
+      "english": "English"
+    },
+    "coverletter": {
+      "name": "Select the Language of Your Cover Letter",
+      "language": "Language",
+      "german": "German",
+      "english": "English"
+    }
   },
   "resumePrompts": {
+    "startChat": "Hi, I would like to create a new resume.",
     "selectLanguage": "I want to create my resume in {}.",
     "tailorToJobPosting": "Please tailor my resume for this company and position: ",
+    "genericResume": "I do not want to tailor this resume to a specific job description.",
     "selectBulletPoints": "Thank you, I have selected and customized these bullet points. Please save them in my resume: ",
-    "addToResumeAndSuggestBulletPoints": "Please add {} to my resume and suggest appropriate bullet points: ",
+    "addToResumeAndSuggestBulletPoints": "Please add these {} to my resume and suggest appropriate bullet points: ",
+    "addPrompt": "Your response must contain a JSON array with appropriate bullet points. Do not include any markdown in your response.",
     "addToResume": "Please add these {} to my resume: ",
-    "saveResume": "Thank you for your help. Now take a moment and consider the entire chat history. I am finished and would like to save my resume now."
+    "saveResume": "Thank you for your help. Now take a moment and consider the entire chat history. I am finished and would like to save my resume now.",
+    "savePrompt": "Save the resume by using the function: save_resume. Do not send any other message. I do not need to see or confirm the resume again. Just save it by using Function Calling."
+  },
+  "coverLetterPrompts": {
+    "startChat": "Hi, I would like to create a new cover letter.",
+    "selectLanguage": "I want to create my cover letter in {}.",
+    "tailorToJobPosting": "Please tailor my cover letter for this company and position: ",
+    "genericResume": "I do not want to tailor this cover letter to a specific job description.",
+    "saveCoverLetter": "Thank you for your help. I am finished and would like to save my cover letter now.",
+    "savePrompt": "Save the cover letter by using the function: save_cover_letter. Do not send any other message. I do not need to see or confirm the cover letter again. Just save it by using Function Calling."
   }
 }

@@ -17,14 +17,14 @@ const MAX_DESCRIPTION_LENGTH = 5000;
 
 const submitForm = () => {
   let json = JSON.stringify(jobDescription.value, null, 2);
-  let prompt = t("resumePrompts.tailorToJobPosting") + json;
+  let prompt = t("coverLetterPrompts.tailorToJobPosting") + json;
 
   // Create a prettified message
-  let message = t("resumePrompts.tailorToJobPosting") + "<br>";
+  let message = t("coverLetterPrompts.tailorToJobPosting") + "<br>";
 
   // Loop through all keys and values
   for (const [key, value] of Object.entries(jobDescription.value)) {
-    message += `${t(`jobDescriptionForm.${key}`)}: ${value}<br>`;
+    message += `${t(`jobDescriptionForm.coverletter.${key}`)}: ${value}<br>`;
   }
   // Emit the form data to the parent component
   emit("formSubmitted", message, prompt);
@@ -50,22 +50,22 @@ const closeForm = () => {
 <template>
   <div class="chat-form" id="job-description-form">
     <button class="close-button" @click="closeForm">X</button>
-    <h2>{{ t("jobDescriptionForm.name") }}</h2>
+    <h2>{{ t("jobDescriptionForm.coverletter.name") }}</h2>
     <form @submit.prevent="submitForm">
       <div class="form-group">
-        <label for="jobTitle">{{ t("jobDescriptionForm.jobTitle") }}</label>
+        <label for="jobTitle">{{ t("jobDescriptionForm.coverletter.jobTitle") }}</label>
         <input type="text" id="jobTitle" v-model="jobDescription.jobTitle" required />
       </div>
       <div class="form-group">
-        <label for="companyName">{{ t("jobDescriptionForm.companyName") }}</label>
+        <label for="companyName">{{ t("jobDescriptionForm.coverletter.companyName") }}</label>
         <input type="text" id="companyName" v-model="jobDescription.companyName" required />
       </div>
       <div class="form-group">
-        <label for="description">{{ t("jobDescriptionForm.jobDescription") }}</label>
+        <label for="description">{{ t("jobDescriptionForm.coverletter.jobDescription") }}</label>
         <textarea
             id="description"
             v-model="jobDescription.jobDescription"
-            :placeholder='t("jobDescriptionForm.jobDescriptionPlaceholder")'
+            :placeholder='t("jobDescriptionForm.coverletter.jobDescriptionPlaceholder")'
             :maxlength="MAX_TEXTAREA_LENGTH"
             rows="10"
             required

@@ -1,5 +1,4 @@
 <script setup>
-import MenuAlt2 from "@/components/icons/MenuAlt2.vue";
 import Star from "@/components/icons/Star.vue";
 
 

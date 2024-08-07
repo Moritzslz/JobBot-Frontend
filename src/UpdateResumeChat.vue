@@ -113,7 +113,7 @@ const addUserMessage = (text) => {
 };
 
 const initializeWebSocket = () => {
-  websocket = new WebSocket(webSocketUrl + "/v1/create/resume");
+  websocket = new WebSocket(webSocketUrl + "/v1/update/resume");
 
   websocket.onopen = () => {
     setTimeout(() => {
@@ -146,6 +146,8 @@ const initializeWebSocket = () => {
       addServerMessage(t("messages.webSocketAuthFailed"), true);
     } else if (event.code === 1008 && reason === "Insufficient token balance.") {
       addServerMessage(t("messages.tokenBalanceInsufficient"), true);
+    } else if (event.code === 1008 && reason === "Resume required but not found.") {
+      addServerMessage(t("messages.resumeRequired"), true);
     } else {
       addServerMessage(t("messages.webSocketConnectionClosed"));
     }

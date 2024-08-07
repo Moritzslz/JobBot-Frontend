@@ -23,7 +23,7 @@ const submitForm = () => {
   certification.value.bulletList = details.value.split("\n").filter(line => line.trim() !== "");
 
   let json = JSON.stringify(certification.value, null, 2);
-  let prompt = t("resumePrompts.addToResumeAndSuggestBulletPoints").replace("{}", t("certificationsForm.prompt")) + json;
+  let prompt = t("resumePrompts.addToResumeAndSuggestBulletPoints").replace("{}", t("certificationsForm.prompt")) + json + " " + t("resumePrompts.addPrompt");
 
   // Create a prettified message
   let message = t("resumePrompts.addToResumeAndSuggestBulletPoints").replace("{}", t("certificationsForm.prompt")) + "<br>";

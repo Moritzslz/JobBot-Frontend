@@ -118,6 +118,23 @@
     height: 100%;
 }
 
+.submit-icon-btn {
+    height: 3rem;
+    width: 100%;
+    padding: var(--input-padding-small);
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-icon-btn svg {
+    width: 100%;
+    height: 100%;
+}
+
+.submit-icon-btn svg * {
+    stroke: var(--gray-900);
+}
+
 .skill-item {
     display: flex;
     gap: var(--gap-small);

@@ -69,7 +69,7 @@
     "tokenUsage": "Token-Nutzung aufgezeichnet.",
     "tokenUsageAfterClose": "Tokens wurden nach Schließung der Sitzung verwendet.",
     "functionCallError": "Fehler beim Aufruf der Funktion. Bitte kontaktiere den Support.",
-    "resumeRequired": "Ein Lebenslauf wird benötigt, aber nicht gefunden.",
+    "resumeRequired": "Es sieht so aus, als ob du noch keinen Lebenslauf auf JobBot gespeichert hättest. Bitte erstelle zuerst einen Lebenslauf oder lade einen alten hoch.",
     "resumeSaveSuccessful": "Dein Lebenslauf wurde erfolgreich gespeichert.",
     "resumeSaveFailed": "Lebenslauf konnte nicht gespeichert werden. Bitte versuche es erneut.",
     "resumeParsingFailed": "Fehler beim Parsen des Lebenslaufs. Bitte stelle sicher, dass das Lebenslauf-Format korrekt ist.",
@@ -258,25 +258,54 @@
     "name": "Wähle Stichpunkte aus und passe sie an",
     "addButton": "Stichpunkt hinzufügen"
   },
-  "languageSelector": {
-    "name": "Wähle die Sprache deines Lebenslaufs",
-    "language": "Sprache",
-    "german": "Deutsch",
-    "english": "Englisch"
-  },
   "jobDescriptionForm": {
-    "name": "Lass deinen Lebenslauf auf eine bestimmte Stelle anpassen",
-    "jobTitle": "Berufsbezeichnung/Position",
-    "companyName": "Unternehmen",
-    "jobDescription": "Stellenbeschreibung",
-    "jobDescriptionPlaceholder": "Bitte füge die Stellenbeschreibung hier ein."
+    "resume": {
+      "name": "Lass deinen Lebenslauf auf eine bestimmte Stelle anpassen",
+      "jobTitle": "Berufsbezeichnung/Position",
+      "companyName": "Unternehmen",
+      "jobDescription": "Stellenbeschreibung",
+      "jobDescriptionPlaceholder": "Bitte füge die Stellenbeschreibung hier ein."
+    },
+    "coverletter": {
+      "name": "Lass dein Anschreiben auf eine bestimmte Stelle anpassen",
+      "jobTitle": "Berufsbezeichnung/Position",
+      "companyName": "Unternehmen",
+      "jobDescription": "Stellenbeschreibung",
+      "jobDescriptionPlaceholder": "Bitte füge die Stellenbeschreibung hier ein."
+    }
+  },
+  "languageSelector": {
+    "resume": {
+      "name": "Wähle die Sprache deines Lebenslaufs",
+      "language": "Sprache",
+      "german": "Deutsch",
+      "english": "Englisch"
+    },
+    "coverletter": {
+      "name": "Wähle die Sprache deines Anschreibens",
+      "language": "Sprache",
+      "german": "Deutsch",
+      "english": "Englisch"
+    }
   },
   "resumePrompts": {
+    "startChat": "Hi, ich möchte einen neuen Lebenslauf erstellen.",
     "selectLanguage": "Ich möchte meinen Lebenslauf auf {} erstellen.",
     "tailorToJobPosting": "Bitte passe meinen Lebenslauf für dieses Unternehmen und diese Position an: ",
+    "genericResume": "Ich möchte diesen Lebenslauf auf keine spezielle Stellenbeschreibung anpassen.",
     "selectBulletPoints": "Danke, ich habe diese Stichpunkte ausgewählt und angepasst. Bitte speichere sie in meinem Lebenslauf: ",
     "addToResumeAndSuggestBulletPoints": "Bitte füge diese {} meinem Lebenslauf hinzu und schlage passende Stichpunkte vor: ",
+    "addPrompt": "Deine Antwort muss ein JSON Array mit passenden Stichpunkten enthalten. Gib in deiner Antwort kein Markdown zurück.",
     "addToResume": "Bitte füge {} meinem Lebenslauf hinzu: ",
-    "saveResume": "Vielen Dank für deine Hilfe. Nun nimm dir einen Moment Zeit und berücksichtige den gesamten Chatverlauf. Ich bin fertig und möchte meinen Lebenslauf nun speichern."
+    "saveResume": "Vielen Dank für deine Hilfe. Nun nimm dir einen Moment Zeit und berücksichtige den gesamten Chatverlauf. Ich bin fertig und möchte meinen Lebenslauf nun speichern.",
+    "savePrompt": "Speichere den Lebenslauf durch das Nutzen der Funktion: save_resume. Schreibe keine andere Nachricht mehr. Ich muss den Lebenslauf nicht nochmal sehen oder bestätigen. Speichere diesen einfach durch Function Calling."
+  },
+  "coverLetterPrompts": {
+    "startChat": "Hi, ich möchte ein neues Anschreiben erstellen.",
+    "selectLanguage": "Ich möchte mein Anschreiben auf {} erstellen.",
+    "tailorToJobPosting": "Bitte passe mein Anschreiben für dieses Unternehmen und diese Position an: ",
+    "genericResume": "Ich möchte dieses Anschreiben auf keine spezielle Stellenbeschreibung anpassen.",
+    "saveCoverLetter": "Vielen Dank für deine Hilfe. Ich bin fertig und möchte mein Anschreiben nun speichern.",
+    "savePrompt": "Speichere das Anschreiben durch das Nutzen der Funktion: save_cover_letter. Schreibe keine andere Nachricht mehr. Ich muss das Anschreiben nicht nochmal sehen oder bestätigen. Speichere diesen einfach durch Function Calling."
   }
 }

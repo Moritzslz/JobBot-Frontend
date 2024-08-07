@@ -113,7 +113,7 @@ const addUserMessage = (text) => {
 };
 
 const initializeWebSocket = () => {
-  websocket = new WebSocket(webSocketUrl + "/v1/create/resume");
+  websocket = new WebSocket(webSocketUrl + "/v1/create/cover-letter");
 
   websocket.onopen = () => {
     setTimeout(() => {
@@ -135,7 +135,7 @@ const initializeWebSocket = () => {
   websocket.onclose = (event) => {
     const statusCode = event.code;
     const reason = event.reason || t("messages.defaultCloseReason");
-    if (statusCode === 1000 && reason === "Function call successful") {
+    if (statusCode === 1000 && reason === "Function call successful.") {
       addServerMessage(t("chat.successResume"))
       showProfileButton()
       addServerMessage(t("chat.feedback"))
@@ -146,6 +146,8 @@ const initializeWebSocket = () => {
       addServerMessage(t("messages.webSocketAuthFailed"), true);
     } else if (event.code === 1008 && reason === "Insufficient token balance.") {
       addServerMessage(t("messages.tokenBalanceInsufficient"), true);
+    } else if (event.code === 1008 && reason === "Resume required but not found.") {
+      addServerMessage(t("messages.resumeRequired"), true);
     } else {
       addServerMessage(t("messages.webSocketConnectionClosed"));
     }

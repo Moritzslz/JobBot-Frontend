@@ -25,7 +25,7 @@ const submitForm = () => {
   additionalExperience.value.bulletList = responsibilities.value.split("\n").filter(line => line.trim() !== "");
 
   let json = JSON.stringify(additionalExperience.value, null, 2);
-  let prompt = t("resumePrompts.addToResume").replace("{}", t("additionalExperienceForm.prompt")) + json;
+  let prompt = t("resumePrompts.addToResume").replace("{}", t("additionalExperienceForm.prompt")) + json + " " + t("resumePrompts.addPrompt");
 
   // Create a prettified message
   let message = t("resumePrompts.addToResume").replace("{}", t("additionalExperienceForm.prompt")) + "<br>";

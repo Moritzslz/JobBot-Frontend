@@ -25,7 +25,7 @@ const submitForm = () => {
   personalProject.value.bulletList = activities.value.split("\n").filter(line => line.trim() !== "");
 
   let json = JSON.stringify(personalProject.value, null, 2);
-  let prompt = t("resumePrompts.addToResumeAndSuggestBulletPoints").replace("{}", t("personalProjectsForm.prompt")) + json;
+  let prompt = t("resumePrompts.addToResumeAndSuggestBulletPoints").replace("{}", t("personalProjectsForm.prompt")) + json + " " + t("resumePrompts.addPrompt");
 
   // Create a prettified message
   let message = t("resumePrompts.addToResumeAndSuggestBulletPoints").replace("{}", t("personalProjectsForm.prompt")) + "<br>";

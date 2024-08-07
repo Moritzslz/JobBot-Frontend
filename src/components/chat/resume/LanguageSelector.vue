@@ -9,7 +9,7 @@ const emit = defineEmits(["formSubmitted", "formClosed"]);
 
 const selectedLanguage = ref("German");
 
-const languages = [t("languageSelector.german"), t("languageSelector.english")];
+const languages = [t("languageSelector.resume.german"), t("languageSelector.resume.english")];
 
 const selectLanguage = () => {
   let message = t("resumePrompts.selectLanguage").replace("{}", selectedLanguage.value);
@@ -30,10 +30,10 @@ const closeForm = () => {
 <template>
   <div class="chat-form" id="language-selector">
     <button class="close-button" @click="closeForm">X</button>
-    <h2>{{ t("languageSelector.name") }}</h2>
+    <h2>{{ t("languageSelector.resume.name") }}</h2>
     <form @submit.prevent="selectLanguage">
       <div class="form-group">
-        <label for="language">{{ t("languageSelector.language") }}</label>
+        <label for="language">{{ t("languageSelector.resume.language") }}</label>
         <select id="language" v-model="selectedLanguage">
           <option v-for="language in languages" :key="language" :value="language">
             {{ language }}
