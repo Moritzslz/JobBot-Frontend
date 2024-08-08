@@ -29,6 +29,7 @@ const messages = ref([]);
 const showBulletPointEditor = ref(false);
 const bulletPoints = ref([]);
 let websocket;
+let intervalId;
 
 const forms = {
   "languageSelector": LanguageSelector,
@@ -133,9 +134,10 @@ const initializeWebSocket = () => {
   };
 
   websocket.onclose = (event) => {
+    stopStopwatch();
     const statusCode = event.code;
     const reason = event.reason || t("messages.defaultCloseReason");
-    if (statusCode === 1000 && reason === "Function call successful") {
+    if (statusCode === 1000 && reason === "Function call successful.") {
       addServerMessage(t("chat.successResume"))
       showProfileButton()
       addServerMessage(t("chat.feedback"))
@@ -179,8 +181,38 @@ const showDonationButton = () => {
   addServerMessage('', false, true, buttonHtml);
 };
 
+// Stopwatch logic
+const startTime = ref(null);
+const elapsedTime = ref("00:00:00");
+
+const startStopwatch = () => {
+  startTime.value = new Date();
+  intervalId = setInterval(() => {
+    const now = new Date();
+    const diff = new Date(now - startTime.value);
+    const hours = String(diff.getUTCHours()).padStart(2, '0');
+    const minutes = String(diff.getUTCMinutes()).padStart(2, '0');
+    const seconds = String(diff.getUTCSeconds()).padStart(2, '0');
+    elapsedTime.value = `${hours}:${minutes}:${seconds}`;
+  }, 1000);
+};
+
+const stopStopwatch = () => {
+  if (intervalId) {
+    clearInterval(intervalId);
+    const now = new Date();
+    const diff = new Date(now - startTime.value);
+    const hours = String(diff.getUTCHours()).padStart(2, '0');
+    const minutes = String(diff.getUTCMinutes()).padStart(2, '0');
+    const seconds = String(diff.getUTCSeconds()).padStart(2, '0');
+    const totalTime = `${hours}:${minutes}:${seconds}`;
+    addServerMessage(`Total time spent in chat: ${totalTime}`);
+  }
+};
+
 onMounted(() => {
   initializeWebSocket();
+  startStopwatch();
 });
 
 onUnmounted(() => {
@@ -225,6 +257,8 @@ onUnmounted(() => {
                          @formClosed="closeBulletPointEditor"
       />
     </div>
+    <!-- Elapsed Time -->
+    <div class="elapsed-time">Elapsed Time: {{ elapsedTime }}</div>
   </div>
   <HorizontalScrollMenu @formSelected="setActiveForm" :forms="forms"></HorizontalScrollMenu>
 </template>

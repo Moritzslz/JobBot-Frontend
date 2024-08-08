@@ -2,21 +2,11 @@
 import { getCurrentInstance, onMounted, onUnmounted, ref } from "vue";
 import HorizontalScrollMenu from "@/components/HorizontalScrollMenu.vue";
 import Navbar from "@/components/Navbar.vue";
-import WorkExperienceForm from "@/components/chat/resume/WorkExperienceForm.vue";
-import EducationForm from "@/components/chat/resume/EducationForm.vue";
-import PersonalProjectsForm from "@/components/chat/resume/PersonalProjectsForm.vue";
-import CertificationsForm from "@/components/chat/resume/CertificationsForm.vue";
-import LanguagesForm from "@/components/chat/resume/LanguagesForm.vue";
-import HobbiesForm from "@/components/chat/resume/HobbiesForm.vue";
-import AdditionalExperienceForm from "@/components/chat/resume/AdditionalExperienceForm.vue";
-import AwardsForm from "@/components/chat/resume/AwardsForm.vue";
-import BulletPointEditor from "@/components/chat/resume/BulletPointEditor.vue";
-import SkillsForm from "@/components/chat/resume/SkillsForm.vue";
 import JobDescriptionForm from "@/components/chat/resume/JobDescriptionForm.vue";
 import JobBotLogo from "@/components/icons/JobBotLogo.vue";
 import { useI18n } from "vue-i18n";
 import LanguageSelector from "@/components/chat/resume/LanguageSelector.vue";
-import SubmitResume from "@/components/chat/resume/SubmitResume.vue";
+import SubmitCoverLetter from "@/components/chat/coverletter/SubmitCoverLetter.vue";
 
 const { t } = useI18n();
 const { appContext } = getCurrentInstance();
@@ -33,16 +23,7 @@ let websocket;
 const forms = {
   "languageSelector": LanguageSelector,
   "jobDescriptionForm": JobDescriptionForm,
-  "submitResume": SubmitResume,
-  "workExperienceForm": WorkExperienceForm,
-  "educationForm": EducationForm,
-  "skillsForm": SkillsForm,
-  "personalProjectsForm": PersonalProjectsForm,
-  "additionalExperienceForm": AdditionalExperienceForm,
-  "awardsForm": AwardsForm,
-  "certificationsForm": CertificationsForm,
-  "languagesForm": LanguagesForm,
-  "hobbiesForm": HobbiesForm,
+  "submitCoverLetter": SubmitCoverLetter
 }
 
 // Define a function to set the active form
@@ -63,34 +44,6 @@ const handleFormSubmitted = (message, prompt) => {
   }
 };
 
-const extractBulletPoints = (message) => {
-  // Use a raw regular expression pattern
-  const match = message.match(/\[([\s\S]*?)\]/);
-  console.log(match);
-  if (match) {
-    try {
-      // Trim whitespace and newline characters
-      const jsonString = match[0].replace(/\n/g, ' ').trim();
-      const parsed = JSON.parse(jsonString);
-      if (Array.isArray(parsed)) {
-        return parsed;
-      }
-    } catch (error) {
-      console.error("Failed to parse bullet points:", error);
-    }
-  }
-  return [];
-};
-
-const handleBulletPointsSubmitted = (message, prompt) => {
-  handleFormSubmitted(message, prompt)
-  closeBulletPointEditor()
-};
-
-const closeBulletPointEditor = () => {
-  showBulletPointEditor.value = false;
-};
-
 const handleFormClosed = () => {
   activeForm.value = null; // Close the currently active form
 };
@@ -101,11 +54,6 @@ const handleFormHidden = () => {
 
 const addServerMessage = (text, isError = false, isButton = false, html = "") => {
   messages.value.push({text, isUser: false, isError, isButton, html});
-  const points = extractBulletPoints(text);
-  if (points.length > 0) {
-    bulletPoints.value = points;
-    showBulletPointEditor.value = true;
-  }
 };
 
 const addUserMessage = (text) => {
@@ -218,14 +166,6 @@ onUnmounted(() => {
                  @formSubmitted="handleFormSubmitted"
                  @formClosed="handleFormClosed"
                  @hideForm="handleFormHidden" />
-
-      <!-- Render BulletPointEditor separately, outside the chat messages -->
-      <BulletPointEditor class="message-body user-message"
-                         v-if="showBulletPointEditor"
-                         :initialBulletPoints="bulletPoints"
-                         @formSubmitted="handleBulletPointsSubmitted"
-                         @formClosed="closeBulletPointEditor"
-      />
     </div>
   </div>
   <HorizontalScrollMenu @formSelected="setActiveForm" :forms="forms"></HorizontalScrollMenu>

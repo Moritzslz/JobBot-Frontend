@@ -135,7 +135,7 @@ const initializeWebSocket = () => {
   websocket.onclose = (event) => {
     const statusCode = event.code;
     const reason = event.reason || t("messages.defaultCloseReason");
-    if (statusCode === 1000 && reason === "Function call successful") {
+    if (statusCode === 1000 && reason === "Function call successful.") {
       addServerMessage(t("chat.successResume"))
       showProfileButton()
       addServerMessage(t("chat.feedback"))

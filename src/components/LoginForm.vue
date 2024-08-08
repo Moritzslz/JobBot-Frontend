@@ -62,7 +62,7 @@ async function handleSubmit() {
       const data = await response.json();
       serverMessage.value = "Login successful.";
       // Perform further actions like redirecting to a different page
-      router.push("/chat")
+      router.push("/create/cover-letter")
     } else if (response.status === 401) {
       serverMessage.value = "Bad credentials. Please try again.";
     } else if (response.status === 404) {
